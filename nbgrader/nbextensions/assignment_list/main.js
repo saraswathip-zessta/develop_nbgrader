@@ -17,6 +17,7 @@ define([
         '  <div id="assignments_toolbar" class="row list_toolbar">',
         '    <div class="col-sm-8 no-padding">',
         '      <span id="assignments_list_info" class="toolbar_info">Released,hello, downloaded, and submitted assignments for course:</span>',
+        '      <span>Hello, Sravanthi</span>',
         '      <div class="btn-group btn-group-xs">',
         '        <button type="button" class="btn btn-default" id="course_list_default">Loading, please wait...</button>',
         '        <button type="button" class="btn btn-default dropdown-toggle" id="course_list_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled="disabled">',
