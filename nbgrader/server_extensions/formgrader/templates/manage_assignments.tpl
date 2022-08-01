@@ -9,7 +9,7 @@ var url_prefix = "{{ url_prefix }}";
 {%- endblock -%}
 
 {%- block title -%}
-Manage Assignments
+Manage Modules
 {%- endblock -%}
 
 {%- block sidebar -%}
