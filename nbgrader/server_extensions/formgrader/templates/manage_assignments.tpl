@@ -20,7 +20,7 @@ Manage Modules
 
 {%- block breadcrumbs -%}
 <ol class="breadcrumb">
-  <li class="active">Assignments</li>
+  <li class="active">Modules</li>
 </ol>
 {%- endblock -%}
 
