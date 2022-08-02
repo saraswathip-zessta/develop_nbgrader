@@ -21,5 +21,5 @@
 {%- endblock -%}
 
 {%- block table_body -%}
-<tr><td colspan="4">Loading, please wait...</td></tr>
+<tr><td colspan="4">Hello, Loading, please wait...</td></tr>
 {%- endblock -%}
