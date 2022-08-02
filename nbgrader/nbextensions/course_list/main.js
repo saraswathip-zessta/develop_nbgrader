@@ -27,7 +27,7 @@ define([
         '      <div class="panel-body">',
         '        <div id="formgrader_list" class="list_container">',
         '          <div id="formgrader_list_placeholder" class="row list_placeholder">',
-        '            <div> There are no available formgrader services. </div>',
+        '            <div> Hello, There are no available formgrader services. </div>',
         '          </div>',
         '          <div id="formgrader_list_loading" class="row list_loading">',
         '            <div> Loading, please wait... </div>',
