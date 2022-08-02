@@ -7,6 +7,7 @@
 {%- block breadcrumbs -%}
 <ol class="breadcrumb">
   <li class="active">Students</li>
+  <li>hello</li>
 </ol>
 {%- endblock -%}
 
