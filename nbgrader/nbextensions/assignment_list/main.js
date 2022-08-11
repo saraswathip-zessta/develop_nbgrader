@@ -17,6 +17,7 @@ define([
         '  <div id="assignments_toolbar" class="row list_toolbar">',
         '    <div class="col-sm-8 no-padding">',
         '      <span id="assignments_list_info" class="toolbar_info">Released, downloaded, and submitted assignments for course:</span>',
+        '      <span id="assignments_list_info" class="toolbar_info">We are here to take latest pull</span>',
         '      <span>'+Jupyter.notebook_list.base_url+'</span>',
         '      <div class="btn-group btn-group-xs">',
         '        <button type="button" class="btn btn-default" id="course_list_default">Loading, please wait...</button>',
