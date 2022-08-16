@@ -101,3 +101,55 @@
     padding-left: 7px;
     padding-right: 7px;
 }
+#course_list_default{
+    border-color:#5FBEF0;
+    border-radius:20px;
+    padding-right:40px;
+    padding-left:10px;
+    font-family:'Gothis A1';
+    font-size:15px;
+    font-weight:600;
+}
+#course_list_default:hover{
+    background-color:white;
+}
+#course_list_dropdown{
+    border:none;
+    margin-left:-40px;
+    margin-top:2px;
+    padding-left:16px;
+}
+.col-sm-8.mo-padding{
+    padding-top:15px;
+    padding-bottom:25px;
+    font-family:'Gothic A1';
+    font-size:15px;
+}
+#assignments_buttons{
+    margin-top:15px;
+    border-color:#5FBEF0;
+}
+.panel.panel-default{
+    border-radius:20px;
+    border-color:#5FBEF0;
+    margin-bottom:30px !important;
+}
+#assignments .panel-group .panel .panel-heading{
+    border-top-left-radius:20px;
+    border-top-right-radius:20px;
+    background-color:#D2EDZFB !important;
+    font-weight:600;
+    padding-left:20px !important;
+    padding-top:10px !important;
+    padding-bottom:10px !important;
+    font-family:'Gothic A1';
+    font-size:15px;
+}
+#assignments .list_placeholder, #assignments .list_loading, #assignments .list_error{
+    font-weight:400 !important;
+    padding-top:20px !important;
+    padding-bottom:20px !important;
+    padding-left:20px !important;
+    font-famlily:'Gothic A1';
+    font-size:15px;
+}
