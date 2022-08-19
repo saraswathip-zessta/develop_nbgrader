@@ -4,15 +4,12 @@
 }
 
 #assignments .panel-group .panel .panel-heading {
-    border-top-left-radius:20px;
-    border-top-right-radius:20px;
-    background-color:#D2EDZFB !important;
-    font-weight:600;
-    padding-left:20px !important;
-    padding-top:10px !important;
-    padding-bottom:10px !important;
-    font-family:'Gothic A1';
-    font-size:15px;
+    background-color: #eee;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 7px;
+    padding-right: 7px;
+    line-height: 22px;
 }
 
 #assignments .panel-group .panel .panel-heading a:focus, a:hover {
@@ -72,13 +69,13 @@
 #assignments .item_status .btn {
     min-width: 13ex;
 }
-#assignments .list_placeholder, #assignments .list_loading, #assignments .list_error, #assignments .#assignments .version_error{
-    font-weight:400 !important;
-    padding-top:20px !important;
-    padding-bottom:20px !important;
-    padding-left:20px !important;
-    font-famlily:'Gothic A1';
-    font-size:15px;
+
+#assignments .list_placeholder {
+    display: none;
+}
+
+#assignments .list_error, #assignments .version_error {
+    display: none;
 }
 
 #submission-message p,
@@ -104,9 +101,12 @@
     padding-left: 7px;
     padding-right: 7px;
 }
+
+###custom.css
+
 #course_list_default{
     border-color:#5FBEF0;
-    border-radius:20px;
+    border-radius:15px;
     padding-right:40px;
     padding-left:10px;
     font-family:'Gothis A1';
@@ -118,9 +118,15 @@
 }
 #course_list_dropdown{
     border:none;
-    margin-left:-40px;
+    margin-left: 2px;
     margin-top:2px;
-    padding-left:16px;
+    background-color:#FFFFFF;
+}
+#course_list_dropdown:hover{
+   background-color:#FFFFFF;
+}
+.toolbar_info{
+   font-size:12px;
 }
 .col-sm-8.mo-padding{
     padding-top:15px;
@@ -130,13 +136,127 @@
 }
 #assignments_buttons{
     margin-top:15px;
-    border-color:#5FBEF0;
+    border-color: #5FBEF0;
+    background-color:#FFFFFF;
 }
 .panel.panel-default{
-    border-radius:20px;
+    border-radius:15px;
     border-color:#5FBEF0;
     margin-bottom:30px !important;
+    border-width:2px;
 }
 .panel-heading{
+    border-top-left-radius:15px;
+    border-top-right-radius:15px;
+    font-weight:600;
+    padding-left:20px !important;
+    padding-top:10px !important;
+    padding-bottom:10px !important;
+    font-family:'Gothic A1';
+    font-size:16px;
     background-color: #D2EDFB !important;
+}
+#assignments .list_loading, #assignments .list_error{
+    font-weight:400 !important;
+    padding-top:10px !important;
+    padding-bottom:10px !important;
+    padding-left:20px !important;
+    font:'Gothic A1' !important;
+    font-size:15px;
+}
+
+.col-md-12:hover {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    /* background-color: #FFFFFF; */
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+.list_item.row:nth-last-of-type(1){
+    border-bottom-left-radius:15px;
+    border-bottom-right-radius:15px;
+}
+.row.list_placeholder{
+    border-bottom-left-radius:15px;
+    border-bottom-right-radius:15px;
+    font-weight:400 !important;
+    padding-top:10px !important;
+    padding-bottom:10px !important;
+    padding-left:20px !important;
+    font:'Gothic A1' !important;
+    font-size:15px;
+    border: none;
+}
+.col-md-12:hover{
+    border-bottom-left-radius:15px;
+    border-bottom-right-radius:15px;
+    background-color:#FFFFFF;
+    margin-left:0px;
+    margin-right:0px;
+    margin-bottom:0px;
+}
+#course_list{
+    border-radius:15px;
+}
+#course_list>li>a{
+    color:#5FBEF0;
+}
+#course_list>li>a:hover{
+    border-radius:15px;
+}
+#refresh_assignments_list{
+	border:10px;
+	background-color:#FFFFFF !important;
+}
+.no-padding {
+    padding: 10px;
+}
+.list_toolbar .tree-buttons {
+    padding-top: 0px;
+}
+.item_name {
+    padding-left: 13px;
+}
+.list_item {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important; 
+    padding-left: 0px !important; 
+    padding-right: 0px !important;
+}
+#assignments .btn-xs{
+     margin-right: 5%;
+    border-radius: 15px;
+    background-color: #5FBEF0;
+    border: 0px;
+    height: 30px;
+    font-weight: 600;
+    display: inline-block;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom:2%;
+    font-size:14px;
+    color:#FFFFFF;
+}
+ #assignments .fa.fa-refresh{
+    color:#5FBEF0;
+}
+.panel-body{
+    padding:10px !important;
+    background-color:#FFFFFF;
+    border-bottom-left-radius:15px;
+    border-bottom-right-radius:15px;
+    font-size:15px;
+}
+.row.list_toolbar{
+    height:52px;
+}
+.col-sm-4.no-padding.tree-buttons{
+    margin-top:-15px;
+}
+#assignments .list_container > div {
+    border-bottom:0px !important;
+    padding:0px !important;
+    margin-bottom:2px;
 }
