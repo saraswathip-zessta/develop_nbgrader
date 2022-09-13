@@ -243,6 +243,9 @@
  #assignments .fa.fa-refresh{
     color:#5FBEF0;
 }
+#released_assignments_list_placeholder>div{
+    font-size: 0.8vw;
+}
 .panel-body{
     padding:10px !important;
     background-color:#FFFFFF;
