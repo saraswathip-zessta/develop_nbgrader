@@ -109,7 +109,7 @@
     border-radius:15px;
     padding-right:40px;
     padding-left:10px;
-    font-family:'Gothis A1';
+    font-family:'Poppins';
     font-size:15px;
     font-weight:600;
 }
@@ -152,7 +152,7 @@
     padding-left:20px !important;
     padding-top:10px !important;
     padding-bottom:10px !important;
-    font-family:'Gothic A1';
+    font-family:'Poppins';
     font-size:16px;
     background-color: #D2EDFB !important;
 }
@@ -184,8 +184,8 @@
     padding-top:10px !important;
     padding-bottom:10px !important;
     padding-left:20px !important;
-    font:'Gothic A1' !important;
-    font-size:10px;
+    font-family:'Gothic A1' !important;
+    font-size:15px;
     border: none;
 }
 .col-md-12:hover{
