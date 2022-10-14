@@ -1,8 +1,15 @@
 from traitlets import Unicode, List
-
 from .base import BasePlugin
 from ..api import MissingEntry, Gradebook
+import csv
 
+
+class CustomExportPlugin(BasePlugin):
+
+    custom_export = Unicode(
+        "",
+        help="The destination path and file name.",
+    ).tag(config=True)
 
 class ExportPlugin(BasePlugin):
     """Base class for export plugins."""
@@ -130,3 +137,10 @@ class CsvExportPlugin(ExportPlugin):
                 fh.write(fmt.format(**score))
 
         fh.close()
+        
+class CustomCSvExportPlugin():
+    def export(self, gradebook: Gradebook) -> None:
+        if self.canvas_export == "":
+            dest = "export_grades.csv"
+        else:
+            dest = self.to
