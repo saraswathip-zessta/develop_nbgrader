@@ -350,6 +350,7 @@ class ReleaseFeedbackHandler(BaseApiHandler):
 
 default_handlers = [
     (r"/formgrader/api/status", StatusHandler),
+    (r"/formgrader/api/customexport",CustomExportHandler),
 
     (r"/formgrader/api/assignments", AssignmentCollectionHandler),
     (r"/formgrader/api/assignment/([^/]+)", AssignmentHandler),
