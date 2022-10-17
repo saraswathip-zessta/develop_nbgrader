@@ -38,7 +38,7 @@ var AssignmentUI = Backbone.View.extend({
     },
 
     openModal: function () {
-	conosle.log(base_url)
+	conosle.log(base_url);
         var body = $("<table/>").addClass("table table-striped form-table");
         var name = $("<tr/>");
         body.append(name);
