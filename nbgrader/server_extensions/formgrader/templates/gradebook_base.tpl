@@ -1,7 +1,11 @@
 {%- extends 'base.tpl' -%}
 
+{%- block head -%}
+<script src="{{ base_url }}/formgrader/api/customexport"></script>
+{%- endblock -%}
 {%- block title -%}
 Manual Grading
+<button onClick=exportDataCSV();>Export</button>
 {%- endblock -%}
 
 {%- block sidebar -%}
