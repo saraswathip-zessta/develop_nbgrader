@@ -47,7 +47,7 @@ class CustomExportHandler(BaseApiHandler):
                     grades.append(score)
 
         # Create a pandas dataframe with our grade information, and save it to disk
-            grades = pd.DataFrame(grades).set_index(['student', 'assignment'])
+#           grades = pd.DataFrame(grades).set_index(['student', 'assignment'])
 #           grades.to_csv('grades.csv')
             self.write(json.dumps(grades))
 
