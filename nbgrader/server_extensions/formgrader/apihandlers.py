@@ -30,9 +30,9 @@ class CustomExportHandler(BaseApiHandler):
                 # Create a dictionary that will store information about this student's
                 # submitted assignment
                     score = {}
-                    score['max_score'] = assignment.max_score
-                    score['student'] = student.id
-                    score['assignment'] = assignment.name
+                    score['Learner'] = student.id
+                    score['Assignment'] = assignment.name
+                    score['Max_Score'] = assignment.max_score
 
                 # Try to find the submission in the database. If it doesn't exist, the
                 # `MissingEntry` exception will be raised, which means the student
@@ -40,9 +40,9 @@ class CustomExportHandler(BaseApiHandler):
                     try:
                         submission = gb.find_submission(assignment.name, student.id)
                     except MissingEntry:
-                        score['score'] = 0.0
+                        score['Score'] = 0.0
                     else:
-                        score['score'] = submission.score
+                        score['Score'] = submission.score
 
                     grades.append(score)
 
