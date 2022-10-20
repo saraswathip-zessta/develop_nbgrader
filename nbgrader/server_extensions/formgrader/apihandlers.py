@@ -343,7 +343,7 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
             grades = []
             # Loop over each assignment in the database
             for assignment in gb.assignments:
-                if self.assignment_id==assignment:
+                if assignment_id==assignment:
                     # Loop over each student in the database
                     for student in gb.students:
                         # Create a dictionary that will store information about this student's
