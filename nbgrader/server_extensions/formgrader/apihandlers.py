@@ -12,14 +12,7 @@ import pandas as pd
 import boto3
 from io import StringIO
 scheduler = BackgroundScheduler()
-scheduler.configure(timezone=utc)
-
-
-class customAssignmentGradeExportHandler(BaseApiHandler):
-    @web.authenticated
-    @check_xsrf
-    def get(self):
-        
+scheduler.configure(timezone=utc)        
     
 class CustomExportHandler(BaseApiHandler):
     @web.authenticated
