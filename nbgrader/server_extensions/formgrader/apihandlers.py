@@ -365,7 +365,7 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
                         grades.append(score)
 
         # Create a pandas dataframe with our grade information, and save it to disk
-            grades = pd.DataFrame(grades).set_index(['student', 'assignment'])
+            grades = pd.DataFrame(grades).set_index(['Learner', 'Assignment'])
             csv_buffer = StringIO()
             grades.to_csv(csv_buffer)
             grades.to_csv('grades.csv')
