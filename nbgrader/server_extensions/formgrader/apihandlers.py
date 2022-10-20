@@ -10,6 +10,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.cron import CronTrigger
 import pandas as pd
 import boto3
+import datetime
 from io import StringIO
 scheduler = BackgroundScheduler()
 scheduler.configure(timezone=utc)        
@@ -352,6 +353,7 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
                             score['Assignment'] = assignment.name
                             score['Max_Score'] = assignment.max_score
                             score['Course_Name'] = assignment.course_id
+                            score['Date_Time'] = datetime.datetime.now()
                             # Try to find the submission in the database. If it doesn't exist, the
                             # `MissingEntry` exception will be raised, which means the student
                             # didn't submit anything, so we assign them a score of zero.
