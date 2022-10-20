@@ -343,7 +343,7 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
             grades = []
             # Loop over each assignment in the database
             for assignment in gb.assignments:
-                if assignment_id==assignment:
+                if assignment_id==assignment.id:
                     # Loop over each student in the database
                     for student in gb.students:
                         # Create a dictionary that will store information about this student's
@@ -363,8 +363,8 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
                             score['Score'] = submission.score
 
                         grades.append(score)
-
-        # Create a pandas dataframe with our grade information, and save it to disk
+            print(grades)
+        # Create a pandas dataframe with our grade information, and save it to s3 bucket
             grades = pd.DataFrame(grades).set_index(['Learner', 'Assignment'])
             csv_buffer = StringIO()
             grades.to_csv(csv_buffer)
