@@ -10,8 +10,10 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.cron import CronTrigger
 import pandas as pd
 import boto3
+from io import StringIO
 scheduler = BackgroundScheduler()
 scheduler.configure(timezone=utc)
+
 
 
 class CustomExportHandler(BaseApiHandler):
@@ -368,6 +370,8 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
 
         # Create a pandas dataframe with our grade information, and save it to disk
           grades = pd.DataFrame(grades).set_index(['student', 'assignment'])
+          csv_buffer = StringIO()
+          grades.to_csv(csv_buffer)
           grades.to_csv('grades.csv')
           s3 = boto3.resource(
                 service_name='s3',
@@ -375,7 +379,7 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
                 aws_access_key_id='AKIA6ND6FDTKBRA2VNK7',
                 aws_secret_access_key='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'
           )
-          s3.Bucket('hcl-datalab').upload_file(Filename='grades.csv', Key='grades.csv')
+          s3.Bucket('hcl-datalab').upload_file(Filename=csv_buffer, Key='grades.csv')
 
 
 class GenerateFeedbackHandler(BaseApiHandler):
