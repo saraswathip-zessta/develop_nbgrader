@@ -354,6 +354,7 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
                             score['Max_Score'] = assignment.max_score
                             score['Course_Name'] = assignment.course_id
                             score['Date_Time'] = datetime.datetime.now()
+                            score['result']=self.write(json.dumps(self.api.release_feedback(assignment_id)))
                             # Try to find the submission in the database. If it doesn't exist, the
                             # `MissingEntry` exception will be raised, which means the student
                             # didn't submit anything, so we assign them a score of zero.
@@ -364,6 +365,7 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
                             else:
                                 score['Score'] = submission.score
                             grades.append(score)
+                         
             # Create a pandas dataframe with our grade information, and save it to s3 bucket
                 grades = pd.DataFrame(grades).set_index(['Learner', 'Assignment'])
                 grades.to_csv('grades.csv')
