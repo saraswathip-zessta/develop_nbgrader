@@ -375,7 +375,7 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
                 aws_access_key_id='AKIA6ND6FDTKBRA2VNK7',
                 aws_secret_access_key='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'
             )
-            s3.Bucket('hcl-datalab').upload_file(Filename=csv_buffer, Key='grades.csv')
+            s3.Bucket('hcl-datalab').upload_file(Filename="csv_buffer", Key='grades.csv')
 
 
 class GenerateFeedbackHandler(BaseApiHandler):
