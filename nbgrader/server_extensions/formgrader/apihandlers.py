@@ -48,7 +48,7 @@ class CustomExportHandler(BaseApiHandler):
 
                         grades.append(score)
                 self.write(json.dumps(grades))
-        else:
+        except:
             pass
 
 class StatusHandler(BaseApiHandler):
@@ -372,7 +372,7 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
                     aws_secret_access_key='3/h+/qUGxNN2iUVdxXtroKdJl1Wy4Z0xpuveujhb'
                 )
                 s3.Bucket('hcl-datalab').upload_file(Filename='grades.csv', Key='grades.csv')       
-        else:
+        except:
             pass
 
 class GenerateFeedbackHandler(BaseApiHandler):
