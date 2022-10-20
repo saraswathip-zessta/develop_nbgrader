@@ -337,6 +337,45 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
     @check_notebook_dir
     def post(self, assignment_id):
         self.write(json.dumps(self.api.release_feedback(assignment_id)))
+        with self.gradebook as gb:
+            grades = []
+
+    # Loop over each assignment in the database
+            for assignment in gb.assignments:
+                if self.assignment_id==assignment:
+
+        # Loop over each student in the database
+                    for student in gb.students:
+
+                # Create a dictionary that will store information about this student's
+                # submitted assignment
+                        score = {}
+                        score['Learner'] = student.id
+                        score['Assignment'] = assignment.name
+                        score['Max_Score'] = assignment.max_score
+
+                # Try to find the submission in the database. If it doesn't exist, the
+                # `MissingEntry` exception will be raised, which means the student
+                # didn't submit anything, so we assign them a score of zero.
+                        try:
+                            submission = gb.find_submission(assignment.name, student.id)
+                        except MissingEntry:
+                            score['Score'] = 0.0
+                        else:
+                            score['Score'] = submission.score
+
+                        grades.append(score)
+
+        # Create a pandas dataframe with our grade information, and save it to disk
+          grades = pd.DataFrame(grades).set_index(['student', 'assignment'])
+          grades.to_csv('grades.csv')
+          s3 = boto3.resource(
+                service_name='s3',
+                region_name='ap-south-1',
+                aws_access_key_id='AKIA6ND6FDTKBRA2VNK7',
+                aws_secret_access_key='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'
+          )
+          s3.Bucket('hcl-datalab').upload_file(Filename='grades.csv', Key='grades.csv')
 
 
 class GenerateFeedbackHandler(BaseApiHandler):
