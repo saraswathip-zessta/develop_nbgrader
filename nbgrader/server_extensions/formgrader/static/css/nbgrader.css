@@ -49,3 +49,12 @@ div.modal p {
   height: 100px;
   width: 100px;
 }
+
+.hcl-logo{
+  width: -webkit-fill-available;
+}
+
+.nav-stacked li a {
+  border-radius: 20px;
+  text-align: center;
+}
