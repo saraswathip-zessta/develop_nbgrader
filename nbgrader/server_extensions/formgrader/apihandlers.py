@@ -408,7 +408,7 @@ class ReleaseFeedbackHandler(BaseApiHandler):
                     if assignment_id==assignment.name:
                         # Loop over each student in the database and check for the atching student id:
                         for student in gb.students:
-                            if student.id === student_id
+                            if student.id == student_id
                             # Create a dictionary that will store information about this student's
                             # submitted assignment
                                 score = {}
