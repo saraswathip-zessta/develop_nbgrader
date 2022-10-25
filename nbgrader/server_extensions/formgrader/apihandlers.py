@@ -337,10 +337,11 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
     @check_xsrf
     @check_notebook_dir
     def post(self, assignment_id):
-        release_feddback_json_dump=json.dumps(self.api.release_feedback(assignment_id))
-        success=release_feedback_json_dump['success']
+        release_feedback_json_dump=json.dumps(self.api.release_feedback(assignment_id))
+#         success=release_feedback_json_dump['success']
+        success=true
         if(success):
-            self.write(release_feddback_json_dump)
+            self.write(release_feedback_json_dump)
             with self.gradebook as gb:
                 grades = []
                 # Loop over each assignment in the database
@@ -356,7 +357,7 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
                             score['Max_Score'] = assignment.max_score
                             score['Course_Name'] = assignment.course_id
                             score['Date_Time'] = datetime.datetime.now()
-                            score['dta']=success
+                            score['dta']=release_feedback_json_dump[0]
                             # Try to find the submission in the database. If it doesn't exist, the
                             # `MissingEntry` exception will be raised, which means the student
                             # didn't submit anything, so we assign them a score of zero.
@@ -379,7 +380,7 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
                 )
                 s3.Bucket('hcl-datalab').upload_file(Filename='grades.csv', Key='grades.csv')  
         else:
-            self.write(release_feddback_json_dump) 
+            self.write(release_feedback_json_dump) 
             
 class GenerateFeedbackHandler(BaseApiHandler):
     @web.authenticated
