@@ -351,6 +351,7 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
                             # Create a dictionary that will store information about this student's
                             # submitted assignment
                             score = {}
+                            score['Trainer'] = os.environ["USER"] 
                             score['Learner'] = student.id
                             score['Assignment'] = assignment.name
                             score['Max_Score'] = assignment.max_score
