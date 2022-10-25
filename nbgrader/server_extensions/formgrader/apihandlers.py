@@ -1,6 +1,6 @@
 import json
 import os
-
+from nbgrader.utils import get_username
 from tornado import web
 
 from .base import BaseApiHandler, check_xsrf, check_notebook_dir
@@ -351,11 +351,11 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
                             # Create a dictionary that will store information about this student's
                             # submitted assignment
                             score = {}
-                            score['Trainer'] = os.environ["USER"] 
+                            score['Course_Name'] = assignment.course_id
+                            score['Trainer'] =  get_username()
                             score['Learner'] = student.id
                             score['Assignment'] = assignment.name
                             score['Max_Score'] = assignment.max_score
-                            score['Course_Name'] = assignment.course_id
                             score['Date_Time'] = datetime.datetime.now()
                             # Try to find the submission in the database. If it doesn't exist, the
                             # `MissingEntry` exception will be raised, which means the student
