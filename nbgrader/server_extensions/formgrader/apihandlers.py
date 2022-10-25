@@ -380,7 +380,7 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
                 )
                 s3.Bucket('hcl-datalab').upload_file(Filename='grades.csv', Key='grades.csv')  
         else:
-            self.write(json.dumps(release_feedback_api_response) 
+            self.write(json.dumps(release_feedback_api_response))
             
 class GenerateFeedbackHandler(BaseApiHandler):
     @web.authenticated
