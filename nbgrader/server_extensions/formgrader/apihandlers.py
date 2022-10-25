@@ -339,6 +339,8 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
     def post(self, assignment_id):
         try:
             self.write(json.dumps(self.api.release_feedback(assignment_id)))
+        except:
+            pass
         else:
             with self.gradebook as gb:
                 grades = []
@@ -376,8 +378,6 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
                     aws_secret_access_key='3/h+/qUGxNN2iUVdxXtroKdJl1Wy4Z0xpuveujhb'
                 )
                 s3.Bucket('hcl-datalab').upload_file(Filename='grades.csv', Key='grades.csv')       
-        except:
-            pass
 
 class GenerateFeedbackHandler(BaseApiHandler):
     @web.authenticated
