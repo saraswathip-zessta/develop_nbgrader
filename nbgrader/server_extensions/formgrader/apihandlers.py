@@ -337,7 +337,8 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
     @check_xsrf
     @check_notebook_dir
     def post(self, assignment_id):
-        release_feedback_json_dump=json.dumps(self.api.release_feedback(assignment_id))
+        feed=self.api.release_feedback(assignment_id)
+        release_feedback_json_dump=json.dumps(feed)
 #         success=release_feedback_json_dump['success']
         success=True
         if(success):
@@ -358,6 +359,7 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
                             score['Course_Name'] = assignment.course_id
                             score['Date_Time'] = datetime.datetime.now()
                             score['dta']=release_feedback_json_dump[0]
+                            score['feed']=feed['success']
                             # Try to find the submission in the database. If it doesn't exist, the
                             # `MissingEntry` exception will be raised, which means the student
                             # didn't submit anything, so we assign them a score of zero.
