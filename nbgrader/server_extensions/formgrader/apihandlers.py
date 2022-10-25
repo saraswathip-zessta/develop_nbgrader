@@ -337,12 +337,10 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
     @check_xsrf
     @check_notebook_dir
     def post(self, assignment_id):
-        feed=self.api.release_feedback(assignment_id)
-        release_feedback_json_dump=json.dumps(feed)
-#         success=release_feedback_json_dump['success']
-        success=True
+        release_feedback_api_reponse=self.api.release_feedback(assignment_id)
+        success=release_feedback_api_response['success']
         if(success):
-            self.write(release_feedback_json_dump)
+            self.write(json.dumps(release_feedback_json_dump))
             with self.gradebook as gb:
                 grades = []
                 # Loop over each assignment in the database
@@ -382,7 +380,7 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
                 )
                 s3.Bucket('hcl-datalab').upload_file(Filename='grades.csv', Key='grades.csv')  
         else:
-            self.write(release_feedback_json_dump) 
+            self.write(json.dumps(release_feedback_json_dump)) 
             
 class GenerateFeedbackHandler(BaseApiHandler):
     @web.authenticated
