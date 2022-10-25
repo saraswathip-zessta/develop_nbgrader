@@ -339,7 +339,7 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
     def post(self, assignment_id):
         release_feedback_json_dump=json.dumps(self.api.release_feedback(assignment_id))
 #         success=release_feedback_json_dump['success']
-        success=true
+        success=True
         if(success):
             self.write(release_feedback_json_dump)
             with self.gradebook as gb:
