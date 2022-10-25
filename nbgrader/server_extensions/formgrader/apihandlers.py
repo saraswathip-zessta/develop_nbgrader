@@ -337,8 +337,9 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
     @check_xsrf
     @check_notebook_dir
     def post(self, assignment_id):
-        self.write(json.dumps(self.api.release_feedback(assignment_id)))
         try:
+        self.write(json.dumps(self.api.release_feedback(assignment_id)))
+        else:
             with self.gradebook as gb:
                 grades = []
                 # Loop over each assignment in the database
