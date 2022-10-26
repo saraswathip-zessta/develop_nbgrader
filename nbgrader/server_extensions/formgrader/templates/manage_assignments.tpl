@@ -160,7 +160,7 @@ table.form-table > tbody > tr > td>input{
     align-items: center;
     justify-content: space-between;
   }
-  #exportButton{
+  #changeCourseButton{
     width: 9vw;
     border-radius: 2vw;
     border: none;
