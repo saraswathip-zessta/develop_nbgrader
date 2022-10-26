@@ -117,7 +117,7 @@ table.form-table > tbody > tr > td>input{
   border-radius:10px;  
   }
  </style>
-  Manage Ass
+  Manage Assignments
   <button id='exportButton' onclick="exportData()">Export Grades</button>
 {%- endblock -%}
 
