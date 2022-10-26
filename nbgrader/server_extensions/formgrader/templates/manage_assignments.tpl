@@ -204,32 +204,32 @@ table.form-table > tbody > tr > td>input{
 }
  </style>
   Manage Assignments
-    <button id='changeCourseButton'>Change Course</button>
-    <div id="changeCourseModal" class="modal">
-    	<div class="courseModalContent">
-        	<span class="courseClose">&times;</span>
-        	<div class="column-flex">
-            <div class="row-flex select-div">
-				      <div>
-					      <label id="courseLabel" for="course">Select course</label>
-				      </div>
-				      <div>
-					      <select class="select" id="course-list" name="course" >
-						      <option>Course name</option>
-					       </select>
-				      </div>
-            </div>
-          	<div class="row-flex">
-         		  <div>
-			    		  <button type="button" id="change_course_button">Change</button>
-		    		  </div>
-              <div>
-			    		  <button type="button" id="cancel_course_button">Cancel</button>
-		    		  </div>
-            </div>
-      		</div>
-    	</div>
-     </div>
+  <button id='changeCourseButton'>Change Course</button>
+  <div id="changeCourseModal" class="modal">
+    <div class="courseModalContent">
+      <span class="courseClose">&times;</span>
+        <div class="column-flex">
+          <div class="row-flex select-div">
+            <div>
+	      <label id="courseLabel" for="course">Select course</label>
+	    </div>
+	    <div>
+	      <select class="select" id="course-list" name="course" >
+	        <option>Course name</option>
+	      </select>
+	    </div>
+          </div>
+          <div class="row-flex">
+            <div>
+	      <button type="button" id="change_course_button">Change</button>
+	    </div>
+            <div>
+	      <button type="button" id="cancel_course_button">Cancel</button>
+	    </div>
+          </div>
+      	</div>
+      </div>
+    </div>
 {%- endblock -%}
 
 {%- block sidebar -%}
