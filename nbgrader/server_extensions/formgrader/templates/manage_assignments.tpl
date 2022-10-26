@@ -92,7 +92,70 @@ table.form-table > tbody > tr > td>input{
   font-size: 20px;
   font-weight: bolder;
 }
-#save_student_button,#save_course_button{
+</style>
+{%- endblock -%}
+
+{%- block title -%}
+ <style>
+  h1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  table{
+    border-radius:10px;  
+  }
+  .courseModal {
+  display: none;
+  position: fixed;
+  z-index: 2; 
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4); 
+}
+.courseModalContent {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  border-radius: 15px;
+  height: 30vh;
+}
+.courseClose {
+  color: #000000;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.courseClose:hover,
+.courseClose:focus {
+  color: #FF0000;
+  text-decoration: none;
+  cursor: pointer;
+}
+  .column-flex{
+    display:flex;
+    flex-direction: column;
+  }
+  .row-flex{
+    display:flex;
+  }
+  #courseLabel{
+    font-family: 'Gothic A1';
+    font-style: normal;
+    font-size: 2vh;
+    line-height: 3vh;
+    color: black;
+    font-weight:400 !important;
+    margin: 3vh 1vw 2vh 0vw;
+}
+#change_course_button{
     position: absolute;
     background: #5FBEF0;
     border-radius: 41vh;
@@ -137,7 +200,7 @@ table.form-table > tbody > tr > td>input{
     top: 3.8vh;
     right: 8vw;
 }
-.select{
+#course-list{
     appearance:none;
     margin: 3vh 0vh 0vh 0vh;
     width: 13vw;height: 3.5vh;
@@ -149,80 +212,16 @@ table.form-table > tbody > tr > td>input{
     font-size: 2vh;
     padding: 0vh 0vw 0vh 0.9vw;
 }
-</style>
-{%- endblock -%}
-
-{%- block title -%}
- <style>
-  h1{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  #changeCourseButton{
-    width: 9vw;
-    border-radius: 2vw;
-    border: none;
-    margin-right: -19vw;
-    background-color: #D2EDFB;
-    font-size: 1vw;
-    font-weight: 100;
-    padding: 0.5vw 1vw 0.5vw 1vw;
-  }
-  table{
-    border-radius:10px;  
-  }
-  .modal {
-  display: none;
-  position: fixed;
-  z-index: 2; 
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto; 
-  background-color: rgba(0,0,0,0.4); 
-}
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 30%;
-  border-radius: 15px;
-  height: 30vh;
-}
-.close {
-  color: #000000;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-.close:hover,
-.close:focus {
-  color: #FF0000;
-  text-decoration: none;
-  cursor: pointer;
-}
-  .column-flex{
-    display:flex;
-    flex-direction: column;
-  }
-  .row-flex{
-    display:flex;
-  }
  </style>
   Manage Assignments
     <button id='changeCourseButton'>Change Course</button>
     <div id="changeCourseModal" class="modal">
-    	<div class="modal-content">
-        	<span class="close">&times;</span>
+    	<div class="courseModalContent">
+        	<span class="courseClose">&times;</span>
         	<div class="column-flex">
             <div class="row-flex select-div">
 				      <div>
-					      <label for="course">Select course</label>
+					      <label id="courseLabel" for="course">Select course</label>
 				      </div>
 				      <div>
 					      <select class="select" id="course-list" name="course" >
@@ -235,7 +234,7 @@ table.form-table > tbody > tr > td>input{
 			    		  <button type="button" id="change_course_button">Change</button>
 		    		  </div>
               <div>
-			    		  <button type="button" id="cancel_button">Cancel</button>
+			    		  <button type="button" id="cancel_course_button">Cancel</button>
 		    		  </div>
             </div>
       		</div>
@@ -355,8 +354,8 @@ for instructions.
 <script>
   const changeCourseButton = document.getElementById("changeCourseButton");
   const courseModal = document.getElementById("changeCourseModal");
-  const closeSpan = document.getElementsByClassName("close")[0];
-  const cancel=document.getElementById("cancel_button");
+  const closeSpan = document.getElementsByClassName("courseClose")[0];
+  const cancel=document.getElementById("cancel_course_button");
   window.onload = function() {
   	const userAction = async () => {
   		const response = await fetch('https://data-labs.hcl-edtech.com/services/ngshare/courses');
@@ -371,7 +370,7 @@ for instructions.
     }));
 })
 }
-userAction()
+userAction();
   
 };
   changeCourseButton.onclick = function() {
@@ -380,11 +379,11 @@ userAction()
   cancel.onclick=function(){
     courseModal.style.display="none";	
   }
-	closeSpan.onclick = function() {
+  closeSpan.onclick = function() {
     courseModal.style.display = "none";
   }
   window.onclick = function(event) {
-    if (event.target == modal) {
+    if (event.target == courseModal) {
       courseModal.style.display = "none";
     }
   }
