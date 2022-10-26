@@ -92,6 +92,63 @@ table.form-table > tbody > tr > td>input{
   font-size: 20px;
   font-weight: bolder;
 }
+#save_student_button,#save_course_button{
+    position: absolute;
+    background: #5FBEF0;
+    border-radius: 41vh;
+    border-color: #5FBEF0;
+    margin: 4vh 0vw 0vh 7vw;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: 2vh;
+    line-height: 2vh;
+    color: white;
+    border-block: unset;
+    width:6vw;
+    height: 4vh;
+    border-width: 0.1vw !important;
+    border-style: hidden;
+}
+#cancel_button{
+    justify-content: center;
+    background: white;
+    border-radius: 41vh;
+    border-color: #5FBEF0;
+    margin: 4vh 0vw 0vh 14vw;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: 2vh;
+    line-height: 2vh;
+    color: #5FBEF0;
+    width:6vw;
+    height: 4vh;
+    position: absolute;
+    border-width: 0.1vw !important;
+    border-style: double;
+}
+.select-div::after {
+    content: url("https://ik.imagekit.io/iwwbj9so6/Vector_9_c4obhy8x5.png?ik-sdk-version=javascript-1.4.3&updatedAt=1660643960909");
+}
+.select-div {
+	position: relative; 
+}
+.select-div::after {
+    position: absolute;
+    top: 3.8vh;
+    right: 8vw;
+}
+.select{
+    appearance:none;
+    margin: 3vh 0vh 0vh 0vh;
+    width: 13vw;height: 3.5vh;
+    background: #FFFFFF;
+    border: 0.1vw solid #5FBEF0;
+    border-radius: 8vh;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: 2vh;
+    padding: 0vh 0vw 0vh 0.9vw;
+}
 </style>
 {%- endblock -%}
 
@@ -114,11 +171,76 @@ table.form-table > tbody > tr > td>input{
     padding: 0.5vw 1vw 0.5vw 1vw;
   }
   table{
-  border-radius:10px;  
+    border-radius:10px;  
+  }
+  .modal {
+  display: none;
+  position: fixed;
+  z-index: 2; 
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4); 
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  border-radius: 15px;
+  height: 30vh;
+}
+.close {
+  color: #000000;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #FF0000;
+  text-decoration: none;
+  cursor: pointer;
+}
+  .column-flex{
+    display:flex;
+    flex-direction: column;
+  }
+  .row-flex{
+    display:flex;
   }
  </style>
   Manage Assignments
-  <button id='exportButton' onclick="exportData()">Export Grades</button>
+    <button id='changeCourseButton'>Change Course</button>
+    <div id="changeCourseModal" class="modal">
+    	<div class="modal-content">
+        	<span class="close">&times;</span>
+        	<div class="column-flex">
+            <div class="row-flex select-div">
+				      <div>
+					      <label for="course">Select course</label>
+				      </div>
+				      <div>
+					      <select class="select" id="course-list" name="course" >
+						      <option>Course name</option>
+					       </select>
+				      </div>
+            </div>
+          	<div class="row-flex">
+         		  <div>
+			    		  <button type="button" id="change_course_button">Change</button>
+		    		  </div>
+              <div>
+			    		  <button type="button" id="cancel_button">Cancel</button>
+		    		  </div>
+            </div>
+      		</div>
+    	</div>
+     </div>
 {%- endblock -%}
 
 {%- block sidebar -%}
@@ -229,3 +351,26 @@ for instructions.
   <a href="#" onClick="createAssignmentModal();" class='add-assignment'><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add new assignment</a>
 </div>
 {%endblock%}
+{%- block script -%}
+<script>
+  const changeCourseButton = document.getElementById("changeCourseButton");
+  const courseModal = document.getElementById("changeCourseModal");
+  const closeSpan = document.getElementsByClassName("close")[0];
+  const cancel=document.getElementById("cancel_button");
+  changeCourseButton.onclick = function() {
+    courseModal.style.display = "block";
+  }
+  cancel.onclick=function(){
+    courseModal.style.display="none";	
+  }
+	closeSpan.onclick = function() {
+    courseModal.style.display = "none";
+  }
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      courseModal.style.display = "none";
+    }
+  }
+</script>
+  
+{%- endblock -%}
