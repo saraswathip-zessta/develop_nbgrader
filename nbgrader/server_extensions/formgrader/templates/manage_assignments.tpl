@@ -96,6 +96,27 @@ table.form-table > tbody > tr > td>input{
 {%- endblock -%}
 
 {%- block title -%}
+ <style>
+  h1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #exportButton{
+    width: 9vw;
+    border-radius: 2vw;
+    border: none;
+    margin-right: -19vw;
+    background-color: #D2EDFB;
+    font-size: 1vw;
+    font-weight: 100;
+    padding: 0.5vw 1vw 0.5vw 1vw;
+  }
+  table{
+  border-radius:10px;  
+  }
+ </style>
   Manage Assignments
   <button id='exportButton' onclick="exportData()">Export Grades</button>
 {%- endblock -%}
