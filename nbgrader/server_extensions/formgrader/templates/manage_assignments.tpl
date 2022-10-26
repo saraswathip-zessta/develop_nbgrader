@@ -97,6 +97,7 @@ table.form-table > tbody > tr > td>input{
 
 {%- block title -%}
   Manage Assignments
+  <button id='exportButton' onclick="exportData()">Export Grades</button>
 {%- endblock -%}
 
 {%- block sidebar -%}
