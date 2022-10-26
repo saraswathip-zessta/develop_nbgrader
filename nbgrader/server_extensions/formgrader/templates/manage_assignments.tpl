@@ -103,8 +103,15 @@ table.form-table > tbody > tr > td>input{
     align-items: center;
     justify-content: space-between;
   }
-  table{
-    border-radius:10px;  
+  #changeCourseButton{
+    width: 9vw;
+    border-radius: 2vw;
+    border: none;
+    margin-right: -19vw;
+    background-color: #D2EDFB;
+    font-size: 1vw;
+    font-weight: 100;
+    padding: 0.5vw 1vw 0.5vw 1vw;
   }
   .courseModal {
   display: none;
@@ -154,23 +161,6 @@ table.form-table > tbody > tr > td>input{
     color: black;
     font-weight:400 !important;
     margin: 3vh 1vw 2vh 0vw;
-}
-#change_course_button{
-    position: absolute;
-    background: #5FBEF0;
-    border-radius: 41vh;
-    border-color: #5FBEF0;
-    margin: 4vh 0vw 0vh 7vw;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-size: 2vh;
-    line-height: 2vh;
-    color: white;
-    border-block: unset;
-    width:6vw;
-    height: 4vh;
-    border-width: 0.1vw !important;
-    border-style: hidden;
 }
 #cancel_button{
     justify-content: center;
