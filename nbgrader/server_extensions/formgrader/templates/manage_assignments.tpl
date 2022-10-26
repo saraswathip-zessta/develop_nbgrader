@@ -357,6 +357,21 @@ for instructions.
   const courseModal = document.getElementById("changeCourseModal");
   const closeSpan = document.getElementsByClassName("close")[0];
   const cancel=document.getElementById("cancel_button");
+  window.onload = function() {
+  	const userAction = async () => {
+  		const response = await fetch('https://data-labs.hcl-edtech.com/services/ngshare/courses');
+  		const myJson = await response.json(); 
+  		var courses_list=myJson.courses;
+   $.each(courses_list, function (item,value) {
+    $('#course-list').append($('<option>', { 
+        value: value,
+        text : value
+    }));
+})
+}
+userAction()
+  
+};
   changeCourseButton.onclick = function() {
     courseModal.style.display = "block";
   }
