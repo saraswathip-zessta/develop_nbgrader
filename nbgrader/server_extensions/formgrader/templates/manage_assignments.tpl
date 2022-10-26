@@ -362,6 +362,8 @@ for instructions.
   		const response = await fetch('https://data-labs.hcl-edtech.com/services/ngshare/courses');
   		const myJson = await response.json(); 
   		var courses_list=myJson.courses;
+		const instructor_username={{user}};
+		console.log("userrrrrrrrrr",{{user}});
    $.each(courses_list, function (item,value) {
     $('#course-list').append($('<option>', { 
         value: value,
