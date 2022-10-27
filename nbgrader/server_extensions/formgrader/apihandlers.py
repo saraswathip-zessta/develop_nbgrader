@@ -372,7 +372,7 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
                 #
                 connection = psycopg2.connect(database="jupyterhub", user="admin", password="hub@123", host="postgresql-dev.jhub.svc.cluster.local", port=5432)
                 cur = connection.cursor()
-                cursor.executemany("""INSERT INTO garding_data(training_username,course_name,assignment_name,learner_username,assignment_max_score,learner_score,released_time_stamp)
+                cursor.executemany("""INSERT INTO grading_data(training_username,course_name,assignment_name,learner_username,assignment_max_score,learner_score,released_time_stamp)
                                       VALUES
                                       (%(Trainer)s,%(Course_Name)s,%(Assignment)s,%(Learner)s,%(Max_Score)int, %(Score)int, %(released_time_stamp)ts)
                                        """, grades)
