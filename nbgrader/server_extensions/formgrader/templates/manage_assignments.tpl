@@ -342,6 +342,7 @@ for instructions.
 {%endblock%}
 {%- block script -%}
 <script>
+  console.log("In script");
   const changeCourseButton = document.getElementById("changeCourseButton");
   const courseModal = document.getElementById("changeCourseModal");
   const closeSpan = document.getElementsByClassName("courseClose")[0];
