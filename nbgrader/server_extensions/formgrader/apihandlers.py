@@ -369,13 +369,13 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
                             else:
                                 score['Score'] = submission.score
                             grades.append(score)
-                #
+                # connect to hub database and push the data to grading_data table
                 connection = psycopg2.connect(database="jupyterhub", user="admin", password="hub@123", host="postgresql-dev.jhub.svc.cluster.local", port=5432)
                 cur = connection.cursor()
-                cursor.executemany("""INSERT INTO grading_data(training_username,course_name,assignment_name,learner_username,assignment_max_score,learner_score,released_time_stamp)
+                cur.executemany(""" INSERT INTO 
+  grading_data(trainer_username,course_name,assignment_name,learner_username,assignment_max_score,learner_score,released_time_stamp)
                                       VALUES
-                                      (%(Trainer)s,%(Course_Name)s,%(Assignment)s,%(Learner)s,%(Max_Score)int, %(Score)int, %(released_time_stamp)ts)
-                                       """, grades)
+                                      (%(Trainer)s,%(Course_Name)s,%(Assignment)s,%(Learner)s,%(Max_Score)s, %(Score)s, %(Date_Time)s) """, grades)
                 cur.close()
                 # Create a pandas dataframe with our grade information, and save it to s3 bucket
                 grades = pd.DataFrame(grades).set_index(['Learner', 'Assignment'])
@@ -436,6 +436,14 @@ class ReleaseFeedbackHandler(BaseApiHandler):
                                 else:
                                     score['Score'] = submission.score
                                 grades.append(score)
+                # connect to hub database and push the data to grading_data table
+                connection = psycopg2.connect(database="jupyterhub", user="admin", password="hub@123", host="postgresql-dev.jhub.svc.cluster.local", port=5432)
+                cur = connection.cursor()
+                cur.executemany(""" INSERT INTO 
+  grading_data(trainer_username,course_name,assignment_name,learner_username,assignment_max_score,learner_score,released_time_stamp)
+                                      VALUES
+                                      (%(Trainer)s,%(Course_Name)s,%(Assignment)s,%(Learner)s,%(Max_Score)s, %(Score)s, %(Date_Time)s) """, grades)
+                cur.close()
                          
             # Create a pandas dataframe with our grade information, and save it to s3 bucket
                 grades = pd.DataFrame(grades).set_index(['Learner', 'Assignment'])
