@@ -376,6 +376,7 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
   grading_data(trainer_username,course_name,assignment_name,learner_username,assignment_max_score,learner_score,released_time_stamp)
                                       VALUES
                                       (%(Trainer)s,%(Course_Name)s,%(Assignment)s,%(Learner)s,%(Max_Score)s, %(Score)s, %(Date_Time)s) """, grades)
+                connection.commit()
                 cur.close()
                 # Create a pandas dataframe with our grade information, and save it to s3 bucket
                 grades = pd.DataFrame(grades).set_index(['Learner', 'Assignment'])
@@ -443,6 +444,7 @@ class ReleaseFeedbackHandler(BaseApiHandler):
   grading_data(trainer_username,course_name,assignment_name,learner_username,assignment_max_score,learner_score,released_time_stamp)
                                       VALUES
                                       (%(Trainer)s,%(Course_Name)s,%(Assignment)s,%(Learner)s,%(Max_Score)s, %(Score)s, %(Date_Time)s) """, grades)
+                connection.commit()
                 cur.close()
                          
             # Create a pandas dataframe with our grade information, and save it to s3 bucket
