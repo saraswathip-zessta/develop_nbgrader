@@ -71,9 +71,9 @@
       color:#FFFFFF;
       font-size:20px;
     } 
-    .career-logo{
+    .career-logo {
       width: 175px;
-      height: 30px;
+      height: 50px;
     }
     .col-sm-6:nth-of-type(1){
       display:none; 
