@@ -118,7 +118,7 @@
     <div class="row">
       <div class="col-md-2" '>
         <div class="page-header">
-        <img src="https://ik.imagekit.io/iwwbj9so6/12bdc9b1-5f78-42fc-957a-6f7e8cf11c96__1__akaDA0tt-.png?ik-sdk-version=javascript-1.4.3&updatedAt=1667113214298'/>  
+        <img src="https://ik.imagekit.io/iwwbj9so6/12bdc9b1-5f78-42fc-957a-6f7e8cf11c96__1__akaDA0tt-.png?ik-sdk-version=javascript-1.4.3&updatedAt=1667113214298' class='career-logo'/>  
         </div>
       </div>
       <div class="col-md-8">
