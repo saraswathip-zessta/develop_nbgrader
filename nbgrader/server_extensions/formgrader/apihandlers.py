@@ -7,14 +7,10 @@ import psycopg2
 from .base import BaseApiHandler, check_xsrf, check_notebook_dir
 from ...api import MissingEntry, Gradebook
 from pytz import utc
-from apscheduler.schedulers.background import BackgroundScheduler
-from apscheduler.triggers.cron import CronTrigger
 import pandas as pd
 import boto3
 import datetime
-from io import StringIO
-scheduler = BackgroundScheduler()
-scheduler.configure(timezone=utc)        
+from io import StringIO      
     
 class CustomExportHandler(BaseApiHandler):
     @web.authenticated
