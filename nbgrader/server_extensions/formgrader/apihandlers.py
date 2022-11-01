@@ -32,7 +32,7 @@ class CustomExportHandler(BaseApiHandler):
                         score['Learner'] = student.id
                         score['Assignment'] = assignment.name
                         score['Max_Score'] = assignment.max_score
-                        Score['Course_Name']=assignment.course_id
+                        score['Course_Name']=assignment.course_id
 
                     # Try to find the submission in the database. If it doesn't exist, the
                     # `MissingEntry` exception will be raised, which means the student
