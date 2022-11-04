@@ -7,6 +7,7 @@ var url_prefix = "{{ url_prefix }}";
 <script>
   console.log("In script");
   const changeCourseButton = document.getElementById("changeCourseButton");
+  console.log(changeCourseButton);
   const courseModal = document.getElementById("changeCourseModal");
   const closeSpan = document.getElementsByClassName("courseClose")[0];
   const cancel=document.getElementById("cancel_course_button");
