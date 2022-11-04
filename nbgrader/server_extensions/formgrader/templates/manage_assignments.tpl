@@ -4,6 +4,43 @@
 var url_prefix = "{{ url_prefix }}";
 </script>
 <script src="{{ base_url }}/formgrader/static/js/manage_assignments.js"></script>
+<script>
+  console.log("In script");
+  const changeCourseButton = document.getElementById("changeCourseButton");
+  const courseModal = document.getElementById("changeCourseModal");
+  const closeSpan = document.getElementsByClassName("courseClose")[0];
+  const cancel=document.getElementById("cancel_course_button");
+  window.onload = function() {
+  	const userAction = async () => {
+  		const response = await fetch('https://data-labs.hcl-edtech.com/services/ngshare/courses');
+  		const myJson = await response.json(); 
+  		var courses_list=myJson.courses;
+		const instructor_username="{{ user }}";
+		console.log("userrrrrrrrrr ","{{ user }}");
+   $.each(courses_list, function (item,value) {
+    $('#course-list').append($('<option>', { 
+        value: value,
+        text : value
+    }));
+})
+}
+userAction(); 
+}
+  changeCourseButton.onclick = function() {
+    courseModal.style.display = "block";
+  }
+  cancel.onclick=function(){
+    courseModal.style.display="none";	
+  }
+  closeSpan.onclick = function() {
+    courseModal.style.display = "none";
+  }
+  window.onclick = function(event) {
+    if (event.target == courseModal) {
+      courseModal.style.display = "none";
+    }
+  }
+</script>
 <style>
 .instruction-head{
   font-weight:600;
