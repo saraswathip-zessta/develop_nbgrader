@@ -24,9 +24,8 @@ var url_prefix = "{{ url_prefix }}";
     }));
 })
 }
-userAction();
-  
-};
+userAction(); 
+}
   changeCourseButton.onclick = function() {
     courseModal.style.display = "block";
   }
