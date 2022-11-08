@@ -3,7 +3,7 @@ import os
 from nbgrader.utils import get_username
 from tornado import web
 import psycopg2
-
+from pathlib import Path
 from .base import BaseApiHandler, check_xsrf, check_notebook_dir
 from ...api import MissingEntry, Gradebook
 from pytz import utc
@@ -11,6 +11,14 @@ import pandas as pd
 import boto3
 import datetime
 from io import StringIO      
+    
+class ChangeCourseHandler(self,course_name):
+    @web.authenticated
+    @check_xsrf
+    def get(self):
+        my_file = Path("/nbgrader_config.py")
+        if my_file.is_file():
+            self.write(json.dumps({"success":True}))
     
 class CustomExportHandler(BaseApiHandler):
     @web.authenticated
@@ -461,7 +469,7 @@ class ReleaseFeedbackHandler(BaseApiHandler):
 default_handlers = [
     (r"/formgrader/api/status", StatusHandler),
     (r"/formgrader/api/customexport",CustomExportHandler),
-
+    (r"/formgrader/api/changecourse/([^/]+)",ChangeCourseHandler),
     (r"/formgrader/api/assignments", AssignmentCollectionHandler),
     (r"/formgrader/api/assignment/([^/]+)", AssignmentHandler),
     (r"/formgrader/api/assignment/([^/]+)/assign", AssignHandler),
