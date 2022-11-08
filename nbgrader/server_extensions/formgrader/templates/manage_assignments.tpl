@@ -373,7 +373,7 @@ userAction();
     courseModal.style.display = "none";
   }
   change_course_button.onclick=function(){
-  const selectedCourse = selected.options[selected.selectedIndex].text;
+  const selectedCourse = selected_course.options[selected.selectedIndex].text;
   console.log(selectedCourse);
   }
   window.onclick = function(event) {
