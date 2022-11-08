@@ -379,7 +379,7 @@ userAction();
       url: "api/changecourse",
     }).done(function (res) {
       console.log(res)
-      }
+      });
   }
   window.onclick = function(event) {
     if (event.target == courseModal) {
