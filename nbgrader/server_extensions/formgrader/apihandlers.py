@@ -12,13 +12,13 @@ import boto3
 import datetime
 from io import StringIO      
     
-class ChangeCourseHandler(self,course_name):
+class ChangeCourseHandler(BaseApiHandler):
     @web.authenticated
     @check_xsrf
-    def get(self):
+    def get(self,course_name):
         my_file = Path("/nbgrader_config.py")
         if my_file.is_file():
-            self.write(json.dumps({"success":True}))
+            self.write(json.dumps({"success":True,"course":course_name}))
     
 class CustomExportHandler(BaseApiHandler):
     @web.authenticated
