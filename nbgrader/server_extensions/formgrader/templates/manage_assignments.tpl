@@ -375,9 +375,6 @@ userAction();
   change_course_button.onclick=function(){
   const selectedCourse = selected.options[selected.selectedIndex].text;
   console.log(selectedCourse);
-{*   $.ajax({
-      url: "api/customexport",
-    }).done(function (res) { *}
   }
   window.onclick = function(event) {
     if (event.target == courseModal) {
