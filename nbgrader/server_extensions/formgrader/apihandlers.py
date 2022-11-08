@@ -18,7 +18,7 @@ class ChangeCourseHandler(BaseApiHandler):
     def get(self,course_name):
         my_file = Path("/nbgrader_config.py")
         if my_file.is_file():
-            self.write(json.dumps({"success":True,"course":course_name}))
+            self.write(json.dumps({'success':True,'course':course_name}))
     
 class CustomExportHandler(BaseApiHandler):
     @web.authenticated
