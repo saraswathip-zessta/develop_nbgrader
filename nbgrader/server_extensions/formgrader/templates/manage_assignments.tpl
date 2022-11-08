@@ -344,17 +344,16 @@ for instructions.
 	<script>
   console.log("In script");
   const changeCourseButton = document.getElementById("changeCourseButton");
-  console.log(changeCourseButton);
   const courseModal = document.getElementById("changeCourseModal");
   const closeSpan = document.getElementsByClassName("courseClose")[0];
   const cancel=document.getElementById("cancel_course_button");
+  const change_course_button=document.getElementById("change_course_button");
+  const selected_course=document.getElementById("course_list");
   window.onload = function() {
   	const userAction = async () => {
   		const response = await fetch('https://data-labs.hcl-edtech.com/services/ngshare/courses');
   		const myJson = await response.json(); 
   		var courses_list=myJson.courses;
-		const instructor_username="{{ user }}";
-		console.log("userrrrrrrrrr ","{{ user }}");
    $.each(courses_list, function (item,value) {
     $('#course-list').append($('<option>', { 
         value: value,
@@ -372,6 +371,9 @@ userAction();
   }
   closeSpan.onclick = function() {
     courseModal.style.display = "none";
+  }
+  change_course_button.onclick=function(){
+  const selectedCourse = selected.options[selected.selectedIndex].text;
   }
   window.onclick = function(event) {
     if (event.target == courseModal) {
