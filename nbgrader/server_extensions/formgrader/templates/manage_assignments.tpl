@@ -348,7 +348,7 @@ for instructions.
   const closeSpan = document.getElementsByClassName("courseClose")[0];
   const cancel=document.getElementById("cancel_course_button");
   const change_course_button=document.getElementById("change_course_button");
-  const selected_course=document.getElementById("course_list");
+  const selected_course=document.getElementById("course-list");
   window.onload = function() {
   	const userAction = async () => {
   		const response = await fetch('https://data-labs.hcl-edtech.com/services/ngshare/courses');
