@@ -380,21 +380,7 @@ userAction();
     }).done(function (res) {
       console.log(res)
       }
-      );
-{*   const createFile = (filePath,fileContent) =>{
-  	fs.writeFile(filePath,fileContent,(error) => {
-		if(error) {
-			console.error('An error occurred',error);
-		}
-		else {
-		console.log('Created file.')
-		}
-	})
-  }
-  const path='/';
-  const content= 'file';
-  createFile(path,content); *}
-  
+      );  
   }
   window.onclick = function(event) {
     if (event.target == courseModal) {
