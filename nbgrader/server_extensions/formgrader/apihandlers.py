@@ -17,7 +17,7 @@ class ChangeCourseHandler(BaseApiHandler):
     @check_xsrf
     def get(self):
         f = open("demofile2.py", "a")
-        f.write("print("Hello!")")
+        f.write("Text")
         f.close()
         my_file = Path("/nbgrader_config.py")
         if my_file.is_file():
