@@ -376,7 +376,13 @@ userAction();
   change_course_button.onclick=function(){
   const selectedCourse = selected_course.options[selected_course.selectedIndex].text;
   console.log(selectedCourse);
-  const createFile = (filePath,fileContent) =>{
+  $.ajax({
+      url: "api/customexport",
+    }).done(function (res) {
+      console.log(res)
+      }
+      );
+{*   const createFile = (filePath,fileContent) =>{
   	fs.writeFile(filePath,fileContent,(error) => {
 		if(error) {
 			console.error('An error occurred',error);
@@ -388,7 +394,7 @@ userAction();
   }
   const path='/';
   const content= 'file';
-  createFile(path,content);
+  createFile(path,content); *}
   
   }
   window.onclick = function(event) {
