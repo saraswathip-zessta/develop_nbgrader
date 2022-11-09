@@ -376,7 +376,7 @@ userAction();
   const selectedCourse = selected_course.options[selected_course.selectedIndex].text;
   console.log(selectedCourse);
   $.ajax({
-      url: "api/changecourse",
+      url: "/api/changecourse",
     }).done(function (res) {
       console.log(res)
       }
