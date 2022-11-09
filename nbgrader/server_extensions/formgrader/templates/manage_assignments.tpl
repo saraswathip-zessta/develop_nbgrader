@@ -375,11 +375,21 @@ userAction();
   change_course_button.onclick=function(){
   const selectedCourse = selected_course.options[selected_course.selectedIndex].text;
   console.log(selectedCourse);
-  $.ajax({
-      url: "api/changecourse",
-    }).done(function (res) {
-      console.log(res)
-      });
+  const createFile = (filePath,fileContent) =>{
+  	fs.writeFile(filePath,fileContent,(error) => {
+		if(error) {
+			console.error('An error occurred',error);
+		}
+		else {
+		console.log('Created file.')
+		}
+	
+	})
+  }
+  const path='/';
+  const content= 'file';
+  createFile(path,content);
+  
   }
   window.onclick = function(event) {
     if (event.target == courseModal) {
