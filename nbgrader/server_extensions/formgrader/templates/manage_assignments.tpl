@@ -383,7 +383,6 @@ userAction();
 		else {
 		console.log('Created file.')
 		}
-	
 	})
   }
   const path='/';
