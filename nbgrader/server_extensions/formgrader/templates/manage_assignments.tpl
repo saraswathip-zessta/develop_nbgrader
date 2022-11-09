@@ -342,7 +342,6 @@ for instructions.
 {%endblock%}
 {% block script%}
 <script>
-import fs from 'fs';
   console.log("In script");
   const changeCourseButton = document.getElementById("changeCourseButton");
   const courseModal = document.getElementById("changeCourseModal");
