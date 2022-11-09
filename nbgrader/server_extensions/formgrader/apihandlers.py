@@ -20,13 +20,13 @@ class ChangeCourseHandler(BaseApiHandler):
         f.write("Text")
         f.close()
         my_file = Path("/nbgrader_config.py")
-        f=open("/nbgrader_config.py","a")
-        f.write("c = get_config()")
-        f.write("\n")
-        f.write("c.CourseDirectory.root = '/home/jovyan/course3'")
-        f.write("\n")
-        f.write("c.CourseDirectory.course_id='course3'")
-        f.close()
+        with open(my_file,'w') as filetowrite:
+        filetowrite.write("c = get_config()")
+        filetowrite.write("\n")
+        filetowrite.write("c.CourseDirectory.root = '/home/jovyan/course3'")
+        filetowrite.write("\n")
+        filetowrite.write("c.CourseDirectory.course_id='course3'")
+        filetowrite.close()
         if my_file.is_file():
             self.write(json.dumps({'success':True}))
     
