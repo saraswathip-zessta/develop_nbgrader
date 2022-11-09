@@ -19,7 +19,7 @@ class ChangeCourseHandler(BaseApiHandler):
         f = open("demofile2.py", "a")
         f.write("Text")
         f.close()
-        my_file = Path("/nbgrader_config.py")
+        my_file = Path("/home/jovyan/nbgrader_config.py")
         with open(my_file,'w') as filetowrite:
             filetowrite.write("c = get_config()")
             filetowrite.write("\n")
