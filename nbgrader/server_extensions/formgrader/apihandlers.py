@@ -15,7 +15,7 @@ from io import StringIO
 class ChangeCourseHandler(BaseApiHandler):
     @web.authenticated
     @check_xsrf
-    def get(self):
+    def get(self,courseName):
         f = open("demofile2.py", "a")
         f.write("Text")
         f.close()
@@ -28,7 +28,7 @@ class ChangeCourseHandler(BaseApiHandler):
             filetowrite.write("c.CourseDirectory.course_id='course3'")
             filetowrite.close()
         if my_file.is_file():
-            self.write(json.dumps({'success':True}))
+            self.write(json.dumps({'success':True,"course":courseName}))
     
 class CustomExportHandler(BaseApiHandler):
     @web.authenticated
@@ -479,7 +479,7 @@ class ReleaseFeedbackHandler(BaseApiHandler):
 default_handlers = [
     (r"/formgrader/api/status", StatusHandler),
     (r"/formgrader/api/customexport",CustomExportHandler),
-    (r"/formgrader/api/changecourse",ChangeCourseHandler),
+    (r"/formgrader/api/changecourse/([^/]+)",ChangeCourseHandler),
     (r"/formgrader/api/assignments", AssignmentCollectionHandler),
     (r"/formgrader/api/assignment/([^/]+)", AssignmentHandler),
     (r"/formgrader/api/assignment/([^/]+)/assign", AssignHandler),
