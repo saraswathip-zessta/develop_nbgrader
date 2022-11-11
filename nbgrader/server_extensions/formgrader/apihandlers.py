@@ -33,15 +33,16 @@ class ChangeCourseHandler(BaseApiHandler):
             configFile.write("\n")
             configFile.write("c.CourseDirectory.course_id='"+courseName+"'")
             configFile.close()
+            userName=get_username()
             hubHeaders={
                     'Accept': 'application/json, text/plain, */*',
                     'Content-Type': 'application/json',
                     'Authorization': 'token 1199d73de2bc4d37900e19c6539833e4'
                 }
-            serverUrl='https://data-labs.hcl-edtech.com/hub/api/users/'+get_username()+'/server'
+            serverUrl='https://data-labs.hcl-edtech.com/hub/api/users/'+userName+'/server'
             stopServerResponse = requests.delete(serverUrl, headers=hubHeaders)
-#             if(stopServerResponse.status_code==204):
-#                 startServerResponse=requests.post(serverUrl,headers=hubHeaders)
+            if(stopServerResponse.status_code==204):
+                startServerResponse=requests.post(serverUrl,headers=hubHeaders)
             self.write(json.dumps({'success':True,"response":stopServerResponse}))
         except:
             self.write(json.dumps({'success':False})) 
