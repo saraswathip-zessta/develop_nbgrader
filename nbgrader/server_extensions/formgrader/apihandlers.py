@@ -16,7 +16,7 @@ class ChangeCourseHandler(BaseApiHandler):
     @web.authenticated
     @check_xsrf
     def get(self,courseName):
-        directoryCheck=Path("home/jovyan/"+courseName).is_dir()
+        directoryCheck=Path("/home/jovyan/"+courseName).is_dir()
         my_file = Path("/home/jovyan/nbgrader_config.py")
         with open(my_file,'w') as filetowrite:
             filetowrite.write("c = get_config()")
