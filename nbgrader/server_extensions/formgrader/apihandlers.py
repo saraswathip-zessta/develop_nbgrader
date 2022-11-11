@@ -40,9 +40,9 @@ class ChangeCourseHandler(BaseApiHandler):
                 }
             serverUrl='https://data-labs.hcl-edtech.com/hub/api/users/'+get_username()+'/server'
             stopServerResponse = requests.delete(serverUrl, headers=hubHeaders)
-            if(stopServerResponse.status_code==204):
-                startServerResponse=requests.post(serverUrl,headers=hubHeaders)
-            self.write(json.dumps({'success':True}))
+#             if(stopServerResponse.status_code==204):
+#                 startServerResponse=requests.post(serverUrl,headers=hubHeaders)
+            self.write(json.dumps({'success':True,"response":stopServerResponse}))
         except:
             self.write(json.dumps({'success':False})) 
             
