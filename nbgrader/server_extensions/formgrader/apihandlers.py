@@ -19,11 +19,11 @@ class ChangeCourseHandler(BaseApiHandler):
     def get(self,courseName):
         try:
             isCourseDirectory=Path("/home/jovyan/"+courseName).is_dir()
-            if(!isCourseDirectory):
+            if not isCourseDirectory:
                 path = os.path.join("/home/jovyan", courseName)
                 os.mkdir(path)
             configFile=Path("/home/jovyan/nbgrader_config.py")
-            if(!configFile.is_file()):
+            if not configFile.is_file():
                 configFile=open("/home/jovyan/nbgrader_config.py", "x")
             else:
                 configFile=open("/home/jovyan/nbgrader_config.py",'w')
