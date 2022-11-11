@@ -10,23 +10,42 @@ from pytz import utc
 import pandas as pd
 import boto3
 import datetime
-from io import StringIO      
+from io import StringIO  
+import requests
     
 class ChangeCourseHandler(BaseApiHandler):
     @web.authenticated
     @check_xsrf
     def get(self,courseName):
-        directoryCheck=Path("/home/jovyan/"+courseName).is_dir()
-        my_file = Path("/home/jovyan/nbgrader_config.py")
-        with open(my_file,'w') as filetowrite:
-            filetowrite.write("c = get_config()")
-            filetowrite.write("\n")
-            filetowrite.write("c.CourseDirectory.root = '/home/jovyan/course3'")
-            filetowrite.write("\n")
-            filetowrite.write("c.CourseDirectory.course_id='course3'")
-            filetowrite.close()
-        if my_file.is_file():
-            self.write(json.dumps({'success':True,"course":courseName,"isCourse":directoryCheck}))
+        try:
+            isCourseDirectory=Path("/home/jovyan/"+courseName).is_dir()
+            if(!isCourseDirectory):
+                path = os.path.join("/home/jovyan", courseName)
+                os.mkdir(path)
+            configFile=Path("/home/jovyan/nbgrader_config.py")
+            if(!configFile.is_file()):
+                configFile=open("/home/jovyan/nbgrader_config.py", "x")
+            else:
+                configFile=open("/home/jovyan/nbgrader_config.py",'w')
+            configFile.write("c = get_config()")
+            configFile.write("\n")
+            configFile.write("c.CourseDirectory.root = '/home/jovyan/'+courseName")
+            configFile.write("\n")
+            configFile.write("c.CourseDirectory.course_id='"+courseName+"'")
+            configFile.close()
+            hubHeaders={
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json',
+                    'Authorization': 'token 1199d73de2bc4d37900e19c6539833e4'
+                }
+            serverUrl='https://data-labs.hcl-edtech.com/hub/api/users/'+get_username()+'/server'
+            stopServerResponse = requests.delete(serverUrl, headers=hubHeaders)
+            if(repsponse.status_code==204):
+                startServerResponse=requests.post(serverUrl,headers=hubHeaders)
+            self.write(json.dumps({'success':True}))
+        except:
+            self.write(json.dumps({'success':False})) 
+            
     
 class CustomExportHandler(BaseApiHandler):
     @web.authenticated
