@@ -29,7 +29,7 @@ class ChangeCourseHandler(BaseApiHandler):
                 configFile=open("/home/jovyan/nbgrader_config.py",'w')
             configFile.write("c = get_config()")
             configFile.write("\n")
-            configFile.write("c.CourseDirectory.root = '/home/jovyan/'"+courseName+"'")
+            configFile.write("c.CourseDirectory.root = '/home/jovyan/"+courseName+")
             configFile.write("\n")
             configFile.write("c.CourseDirectory.course_id='"+courseName+"'")
             configFile.close()
