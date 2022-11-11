@@ -16,9 +16,7 @@ class ChangeCourseHandler(BaseApiHandler):
     @web.authenticated
     @check_xsrf
     def get(self,courseName):
-        f = open("demofile2.py", "a")
-        f.write("Text")
-        f.close()
+        directoryCheck=Path("home/jovyan/"+courseName).is_dir()
         my_file = Path("/home/jovyan/nbgrader_config.py")
         with open(my_file,'w') as filetowrite:
             filetowrite.write("c = get_config()")
@@ -28,7 +26,7 @@ class ChangeCourseHandler(BaseApiHandler):
             filetowrite.write("c.CourseDirectory.course_id='course3'")
             filetowrite.close()
         if my_file.is_file():
-            self.write(json.dumps({'success':True,"course":courseName}))
+            self.write(json.dumps({'success':True,"course":courseName,"isCourse":directoryCheck}))
     
 class CustomExportHandler(BaseApiHandler):
     @web.authenticated
