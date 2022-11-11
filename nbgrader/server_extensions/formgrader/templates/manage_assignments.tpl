@@ -376,7 +376,7 @@ userAction();
   const selectedCourse = selected_course.options[selected_course.selectedIndex].text;
   console.log(selectedCourse);
   $.ajax({
-      url: "formgrader/api/changecourse",
+      url: "formgrader/api/changecourse/"+selectedCourse,
     }).done(function (res) {
       console.log(res)
       }
