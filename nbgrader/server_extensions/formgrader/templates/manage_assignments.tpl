@@ -396,7 +396,7 @@ Manage Students</a></li>
 {% block script%}
 <script>
     console.log("In script");
-    const changeCourseButton = document.getElementById("changeCourseButton");
+    const changeCourseButton = document.getElementById("change_course_button");
     const courseModal = document.getElementById("changeCourseModal");
     const closeSpan = document.getElementsByClassName("courseClose")[0];
     const cancel = document.getElementById("cancel_course_button");
