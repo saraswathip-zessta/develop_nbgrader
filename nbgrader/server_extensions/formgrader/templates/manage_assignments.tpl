@@ -218,6 +218,7 @@ table.form-table > tbody > tr > td>input{
 	        <option>Course name</option>
 	      </select>
 	    </div>
+	    <p>Note: once you click change, you will be redirected to home page. Please stop and start the server for the changes to reflect.</p>
           </div>
           <div class="row-flex">
             <div>
@@ -380,8 +381,8 @@ userAction();
     }).done(function (response) {
     console.log(response);
     console.log(typeof(response.success))
-      if(response.success==true){
-      alert("Please stop and start your server by navigating here.https://data-labs.hcl-edtech.com/hub/home")
+      if(response.success==true || "True" || "true"){
+  	window.location.href='https://data-labs.hcl-edtech.com/hub/home';
       }
       }
       );  
