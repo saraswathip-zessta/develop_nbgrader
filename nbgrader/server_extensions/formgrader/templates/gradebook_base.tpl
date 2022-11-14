@@ -62,7 +62,7 @@ Manual Grading
       url: "api/customexport",
     }).done(function (res) {
       console.log(res)
-      const response = JSON.parse(res);
+{*       const response = JSON.parse(res);
       const dictionaryKeys = Object.keys(response[0]);
       const dictValuesAsCsv = response.map((dict) =>
         dictionaryKeys.map((key) => dict[key]).join(",")
@@ -80,7 +80,7 @@ Manual Grading
       downloadLink.download = "data_" + today + ".csv";
       document.body.appendChild(downloadLink);
       downloadLink.click();
-      document.body.removeChild(downloadLink);
+      document.body.removeChild(downloadLink); *}
     });
   }
 </script>
