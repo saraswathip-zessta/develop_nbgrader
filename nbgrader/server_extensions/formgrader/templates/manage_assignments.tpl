@@ -103,7 +103,7 @@ table.form-table > tbody > tr > td>input{
     align-items: center;
     justify-content: space-between;
   }
-  #changeCourseButton{
+  #change_course_button{
     width: 9vw;
     border-radius: 2vw;
     border: none;
@@ -162,7 +162,7 @@ table.form-table > tbody > tr > td>input{
     font-weight:400 !important;
     margin: 3vh 1vw 2vh 0vw;
 }
-#cancel_button{
+#cancel_course_button{
     justify-content: center;
     background: white;
     border-radius: 41vh;
@@ -202,6 +202,9 @@ table.form-table > tbody > tr > td>input{
     font-size: 2vh;
     padding: 0vh 0vw 0vh 0.9vw;
 }
+#note_content{
+color: FF0000;
+}
  </style>
   Manage Assignments
   <button id='changeCourseButton'>Switch Course</button>
@@ -227,7 +230,7 @@ table.form-table > tbody > tr > td>input{
 	      <button type="button" id="cancel_course_button">Cancel</button>
 	    </div>
           </div>
-          <p>Note: once you click change, you will be redirected to home page. Please stop and start the server for the changes to reflect.</p> 
+          <p id='note_content'>Note: once you click change, you will be redirected to home page. Please stop and start the server for the changes to reflect.</p> 
       	</div>
       </div>
     </div>
