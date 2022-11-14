@@ -103,7 +103,7 @@ table.form-table > tbody > tr > td>input{
     align-items: center;
     justify-content: space-between;
   }
-  #switch_course_button{
+  #switch_course_button,#change_course_button{
     width: 9vw;
     border-radius: 2vw;
     border: none;
@@ -187,7 +187,7 @@ table.form-table > tbody > tr > td>input{
 }
 .select-div::after {
     position: absolute;
-    top: 3.8vh;
+    top: 2vh;
     right: 8vw;
 }
 #course-list{
@@ -204,6 +204,9 @@ table.form-table > tbody > tr > td>input{
 }
 #note_content{
 color: #FF0000;
+font-size: 14px;
+font-weight: 400;
+padding-top: 10vh;
 }
  </style>
   Manage Assignments
