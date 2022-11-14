@@ -103,7 +103,7 @@ table.form-table > tbody > tr > td>input{
     align-items: center;
     justify-content: space-between;
   }
-  #change_course_button{
+  #switch_course_button{
     width: 9vw;
     border-radius: 2vw;
     border: none;
@@ -207,7 +207,7 @@ color: FF0000;
 }
  </style>
   Manage Assignments
-  <button id='changeCourseButton'>Switch Course</button>
+  <button id='switch_course_button'>Switch Course</button>
   <div id="changeCourseModal" class="modal">
     <div class="courseModalContent">
       <span class="courseClose">&times;</span>
