@@ -112,6 +112,7 @@ table.form-table > tbody > tr > td>input{
     font-size: 1vw;
     font-weight: 100;
     padding: 0.5vw 1vw 0.5vw 1vw;
+    margin: 3vh 1vw 2vh 0vw;
   }
   .courseModal {
   display: none;
