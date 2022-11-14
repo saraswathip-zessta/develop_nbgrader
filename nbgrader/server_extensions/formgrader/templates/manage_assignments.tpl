@@ -218,7 +218,6 @@ table.form-table > tbody > tr > td>input{
 	        <option>Course name</option>
 	      </select>
 	    </div>
-	    <p>Note: once you click change, you will be redirected to home page. Please stop and start the server for the changes to reflect.</p>
           </div>
           <div class="row-flex">
             <div>
@@ -228,6 +227,7 @@ table.form-table > tbody > tr > td>input{
 	      <button type="button" id="cancel_course_button">Cancel</button>
 	    </div>
           </div>
+          <p>Note: once you click change, you will be redirected to home page. Please stop and start the server for the changes to reflect.</p> 
       	</div>
       </div>
     </div>
