@@ -112,7 +112,6 @@ table.form-table > tbody > tr > td>input{
     font-size: 1vw;
     font-weight: 100;
     padding: 0.5vw 1vw 0.5vw 1vw;
-    margin: 3vh 1vw 2vh 0vw;
   }
   #change_course_button {
     width: 6vw;
@@ -165,20 +164,20 @@ table.form-table > tbody > tr > td>input{
   .row-flex{
     display:flex;
   }
-  #courseLabel{
+#courseLabel {
     font-family: 'Gothic A1';
     font-style: normal;
     font-size: 2vh;
     line-height: 3vh;
     color: black;
-    font-weight:400 !important;
-    margin: 3vh 1vw 2vh 0vw;
+    font-weight: 400 !important;
+    margin: 3vh 0vw 2vh 3vw;
 }
 #cancel_course_button {
     background: white;
     border-radius: 41vh;
     border-color: #5FBEF0;
-    margin: 2vh 0vw 0vh 11vw;
+    margin: 3vh 0vw 0vh 11vw;
     font-family: 'Poppins';
     font-style: normal;
     font-size: 2vh;
@@ -199,11 +198,11 @@ table.form-table > tbody > tr > td>input{
 .select-div::after {
     position: absolute;
     top: 2vh;
-    right: 3.5vw;
+    right: 3vw;
 }
 #course-list {
     appearance: none;
-    margin: 3vh 0vh 0vh 6vh;
+    margin: 3vh 0vh 0vh 8vh;
     width: 9vw;
     height: 3.5vh;
     background: #FFFFFF;
