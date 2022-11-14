@@ -379,7 +379,7 @@ userAction();
       url: "formgrader/api/changecourse/"+selectedCourse,
     }).done(function (response) {
     console.log(response);
-      if(response.success=="true"){
+      if(response.success=="True"){
       alert("Please stop and start your server by navigating here.https://data-labs.hcl-edtech.com/hub/home")
       }
       }
