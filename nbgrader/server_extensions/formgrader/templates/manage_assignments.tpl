@@ -204,7 +204,7 @@ table.form-table > tbody > tr > td>input{
 }
  </style>
   Manage Assignments
-  <button id='changeCourseButton'>Change Course</button>
+  <button id='changeCourseButton'>Switch Course</button>
   <div id="changeCourseModal" class="modal">
     <div class="courseModalContent">
       <span class="courseClose">&times;</span>
@@ -377,8 +377,10 @@ userAction();
   console.log(selectedCourse);
   $.ajax({
       url: "formgrader/api/changecourse/"+selectedCourse,
-    }).done(function (res) {
-      console.log(res)
+    }).done(function (response) {
+      if(response.success==true){
+      alert("Please stop and start your server by navigating here.https://data-labs.hcl-edtech.com/hub/home")
+      }
       }
       );  
   }
