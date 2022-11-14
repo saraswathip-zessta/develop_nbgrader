@@ -103,7 +103,7 @@ table.form-table > tbody > tr > td>input{
     align-items: center;
     justify-content: space-between;
   }
-  #switch_course_button,#change_course_button{
+  #switch_course_button{
     width: 9vw;
     border-radius: 2vw;
     border: none;
@@ -114,6 +114,17 @@ table.form-table > tbody > tr > td>input{
     padding: 0.5vw 1vw 0.5vw 1vw;
     margin: 3vh 1vw 2vh 0vw;
   }
+  #change_course_button {
+    width: 6vw;
+    height: 4vh;
+    border-radius: 2vw;
+    border: none;
+    margin: 3vh -19vw 0vh 4vw;
+    background-color: #D2EDFB;
+    font-size: 1vw;
+    font-weight: 100;
+    padding: 0.5vw 0.5vw 0.5vw 0.5vw;
+}
   .courseModal {
   display: none;
   position: fixed;
@@ -127,13 +138,13 @@ table.form-table > tbody > tr > td>input{
   background-color: rgba(0,0,0,0.4); 
 }
 .courseModalContent {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 30%;
-  border-radius: 15px;
-  height: 30vh;
+    background-color: #fefefe;
+    margin: 3vh auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 25%;
+    border-radius: 15px;
+    height: 25vh;
 }
 .courseClose {
   color: #000000;
@@ -163,18 +174,17 @@ table.form-table > tbody > tr > td>input{
     font-weight:400 !important;
     margin: 3vh 1vw 2vh 0vw;
 }
-#cancel_course_button{
-    justify-content: center;
+#cancel_course_button {
     background: white;
     border-radius: 41vh;
     border-color: #5FBEF0;
-    margin: 4vh 0vw 0vh 14vw;
+    margin: 2vh 0vw 0vh 11vw;
     font-family: 'Poppins';
     font-style: normal;
     font-size: 2vh;
     line-height: 2vh;
     color: #5FBEF0;
-    width:6vw;
+    width: 6vw;
     height: 4vh;
     position: absolute;
     border-width: 0.1vw !important;
@@ -189,12 +199,13 @@ table.form-table > tbody > tr > td>input{
 .select-div::after {
     position: absolute;
     top: 2vh;
-    right: 8vw;
+    right: 3.5vw;
 }
-#course-list{
-    appearance:none;
-    margin: 3vh 0vh 0vh 0vh;
-    width: 13vw;height: 3.5vh;
+#course-list {
+    appearance: none;
+    margin: 3vh 0vh 0vh 6vh;
+    width: 9vw;
+    height: 3.5vh;
     background: #FFFFFF;
     border: 0.1vw solid #5FBEF0;
     border-radius: 8vh;
@@ -207,7 +218,7 @@ table.form-table > tbody > tr > td>input{
 color: #FF0000;
 font-size: 14px;
 font-weight: 400;
-padding-top: 10vh;
+padding-top: 3vh;
 }
  </style>
   Manage Assignments
@@ -234,7 +245,7 @@ padding-top: 10vh;
 	      <button type="button" id="cancel_course_button">Cancel</button>
 	    </div>
           </div>
-          <p id='note_content'>Note: once you click change, you will be redirected to home page. Please stop and start the server for the changes to reflect.</p> 
+          <p id='note_content'>Note: Once you click 'Change', you will be redirected to Home. Please stop and start the server for the changes to reflect.</p> 
       	</div>
       </div>
     </div>
