@@ -22,7 +22,7 @@ class ChangeCourseHandler(BaseApiHandler):
             if not isCourseDirectory:
                 path = os.path.join("/home/jovyan", courseName)
                 os.mkdir(path)
-                configFile=Path("/home/jovyan/nbgrader_config.py")
+            configFile=Path("/home/jovyan/nbgrader_config.py")
             if not configFile.is_file():
                 configFile=open("/home/jovyan/nbgrader_config.py", "x")
             else:
@@ -43,7 +43,7 @@ class ChangeCourseHandler(BaseApiHandler):
 #             stopServerResponse = requests.delete(serverUrl, headers=hubHeaders)
 #             if(stopServerResponse.status_code==204):
 #                 startServerResponse=requests.post(serverUrl,headers=hubHeaders)
-            self.write(json.dumps({'success':True,'userName':userName}))
+            self.write(json.dumps({'success':True,'userName':userName,'course':courseName}))
         except:
             self.write(json.dumps({'success':False})) 
             
