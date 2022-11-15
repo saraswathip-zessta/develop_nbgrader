@@ -86,13 +86,13 @@ div.modal p {
     margin-left: 1vw;
     margin-right: 0.5vw;
 }
-.add-assignment{
+.footer .add-assignment{
   border-radius:20px;
   color:#FFFFFF;
   font-weight:600;
   font-size: 1.5vh;
 }
-.add-assignment:hover{
+.footer .add-assignment:hover{
   text-decoration: none;
   color:#FFFFFF;
 }
@@ -100,7 +100,7 @@ div.modal p {
   border-color:#5FBEF0; 
   border-radius:20px !important;
 }
-.panel-heading,.panel-body{
+#headingone,.panel-body{
   background-color:#FFFFFF !important;
   border-radius:20px !important; 
 }
@@ -149,7 +149,7 @@ table.form-table > tbody > tr > td>input{
   font-weight: bolder;
 }
 
- h1{
+ .page-header>h1{
     display: flex;
     flex-direction: row;
     align-items: center;
