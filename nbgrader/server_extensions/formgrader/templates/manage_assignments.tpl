@@ -5,7 +5,6 @@ var url_prefix = "{{ url_prefix }}";
 </script>
 <script src="{{ base_url }}/formgrader/static/js/manage_assignments.js"></script>
 {%- endblock -%}
-
 {%- block title -%}
   Manage Assignments
   <button id='switch_course_button'>Switch Course</button>
@@ -64,7 +63,7 @@ Manage Students</a></li>
 
 {%- block messages -%}
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  <div class="panel panel-default">
+  <div class="panel panel-default" id="instructions-panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
       <h4 class="panel-title">
       <span class='instruction-head'>Instructions (click to expand)</span>
