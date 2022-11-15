@@ -60,3 +60,12 @@ div.modal p {
 }
 
 /*  manage_assignments.tpl-css */
+
+#instructions-panel-default{
+    width: 70%;
+    border-radius: 1vw;
+    float: right;
+    border-color: #5FBEF0;
+    background-color: #FFFFFF;
+    font-family: Poppins;
+}
