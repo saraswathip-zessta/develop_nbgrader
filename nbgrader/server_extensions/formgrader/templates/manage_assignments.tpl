@@ -9,9 +9,22 @@ var url_prefix = "{{ url_prefix }}";
   font-weight:600;
   font-family:'Poppins';
 }
+.dataTables_filter {
+    width: 30%;
+    margin-top: -38px;
+}
 .panel-body,.panel-group{
   border-top:20px !important;
   background-color:#FFFFFF;
+}    
+div.dataTables_wrapper div.dataTables_filter input {
+    width: 20vw;
+    border-radius: 2vw;
+    height: 4vh;
+}
+.panel-default>.panel-heading {
+    background-color: #FFFFFF;
+    border-radius: 1vw;
 }
 .footer {
     margin-left: 15.5vw;
@@ -214,11 +227,6 @@ color: #FF0000;
 font-size: 14px;
 font-weight: 400;
 padding-top: 3vh;
-}
-
-.dataTables_filter{
-    width: 30%;
-    margin-top: -35px;
 }
 #instructions-panel-default{
     width: 70%;
