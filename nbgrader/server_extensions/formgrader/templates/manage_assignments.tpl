@@ -4,6 +4,16 @@
 var url_prefix = "{{ url_prefix }}";
 </script>
 <script src="{{ base_url }}/formgrader/static/js/manage_assignments.js"></script>
+<style>
+#instructions-panel-default{
+    width: 70%;
+    border-radius: 1vw;
+    float: right;
+    border-color: #5FBEF0;
+    background-color: #FFFFFF;
+    font-family: Poppins;
+}
+</style>
 {%- endblock -%}
 {%- block title -%}
   Manage Assignments
@@ -144,18 +154,6 @@ for instructions.
   <a href="#" onClick="createAssignmentModal();" class='add-assignment'><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add new assignment</a>
 </div>
 {%endblock%}
-{% block style %}
-
-#instructions-panel-default{
-    width: 70%;
-    border-radius: 1vw;
-    float: right;
-    border-color: #5FBEF0;
-    background-color: #FFFFFF;
-    font-family: Poppins;
-}
-
-{% endblock %}
 {% block script%}
 <script>
   console.log("In script");
