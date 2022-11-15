@@ -5,9 +5,6 @@ var url_prefix = "{{ url_prefix }}";
 </script>
 <script src="{{ base_url }}/formgrader/static/js/manage_assignments.js"></script>
 <style>
-.table.table-hover {
-    border-radius: 1vw;
-}
 .instruction-head{
   font-weight:600;
   font-family:'Poppins';
