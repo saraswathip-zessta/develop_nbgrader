@@ -5,6 +5,9 @@ var url_prefix = "{{ url_prefix }}";
 </script>
 <script src="{{ base_url }}/formgrader/static/js/manage_assignments.js"></script>
 <style>
+.table.table-hover {
+    border-radius: 1vw;
+}
 .instruction-head{
   font-weight:600;
   font-family:'Poppins';
@@ -147,12 +150,13 @@ table.form-table > tbody > tr > td>input{
 }
 .courseModalContent {
     background-color: #fefefe;
-    margin: 3vh auto;
+    margin: 9vh auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid #5FBEF0;
     width: 25%;
     border-radius: 15px;
     height: 25vh;
+    box-shadow: 0px 2px 13px rgb(170 170 170 / 27%);
 }
 .courseClose {
   color: #000000;
@@ -166,10 +170,12 @@ table.form-table > tbody > tr > td>input{
   text-decoration: none;
   cursor: pointer;
 }
-  .column-flex{
-    display:flex;
+  .column-flex {
+    display: flex;
     flex-direction: column;
-  }
+    justify-content: center;
+    align-items: baseline;
+}
   .row-flex{
     display:flex;
   }
@@ -180,20 +186,20 @@ table.form-table > tbody > tr > td>input{
     line-height: 3vh;
     color: black;
     font-weight: 400 !important;
-    margin: 3vh 0vw 2vh 1.5vw;
+    margin: 3vh 0vw 2vh 2.5vw;
 }
 #cancel_course_button {
     background: white;
     border-radius: 41vh;
     border-color: #5FBEF0;
-    margin: 3vh 0vw 0vh 11vw;
+    margin: 3.2vh 0vw 0vh 11vw;
     font-family: 'Poppins';
     font-style: normal;
     font-size: 2vh;
     line-height: 2vh;
     color: #5FBEF0;
     width: 6vw;
-    height: 4vh;
+    height: 3.9vh;
     position: absolute;
     border-width: 0.1vw !important;
     border-style: double;
@@ -207,11 +213,11 @@ table.form-table > tbody > tr > td>input{
 .select-div::after {
     position: absolute;
     top: 2vh;
-    right: 2.5vw;
+    right: 1vw;
 }
 #course-list {
     appearance: none;
-    margin: 3vh 0vh 0vh 8vh;
+    margin: 3vh 0vh 0vh 3vh;
     width: 9vw;
     height: 3.5vh;
     background: #FFFFFF;
@@ -227,6 +233,7 @@ color: #FF0000;
 font-size: 14px;
 font-weight: 400;
 padding-top: 3vh;
+text-align: center;
 }
 #instructions-panel-default{
     width: 70%;
