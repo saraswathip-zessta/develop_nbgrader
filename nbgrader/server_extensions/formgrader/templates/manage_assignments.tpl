@@ -255,7 +255,7 @@ text-align: center;
 	    </div>
 	    <div>
 	      <select class="select" id="course-list" name="course" >
-	        <option value="" disabled selected>Select a course</option>
+	        <option value="" disabled selected>select course</option>
 	      </select>
 	    </div>
           </div>
