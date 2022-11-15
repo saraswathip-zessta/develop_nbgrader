@@ -18,7 +18,7 @@ var url_prefix = "{{ url_prefix }}";
   background-color:#FFFFFF;
 }    
 div.dataTables_wrapper div.dataTables_filter input {
-    width: 20vw;
+    width: 20vw !important;
     border-radius: 2vw;
     height: 4vh;
 }
