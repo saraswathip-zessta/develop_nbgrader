@@ -28,12 +28,12 @@ div.dataTables_wrapper div.dataTables_filter input {
 }
 .footer {
     margin-left: 15.5vw;
-    margin-top: 2vw;
+    margin-top: 2vh;
     border-radius: 20px;
     background-color: #5FBEF0;
-    height: 3.5vh;
+    height: 4.5vh;
     width: 11vw;
-    padding-top: 0.7vh;
+    padding: 0.5vw 0.5vw 0.5vw 0.5vw;
 }
 .footer:hover{
   background-color:#006BB6;
@@ -43,11 +43,11 @@ div.dataTables_wrapper div.dataTables_filter input {
     margin-left: 1vw;
     margin-right: 0.5vw;
 }
-.footer .add-assignment{
-  border-radius:20px;
-  color:#FFFFFF;
-  font-weight:600;
-  font-size: 1.5vh;
+.footer .add-assignment {
+    border-radius: 20px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 12px;
 }
 .footer .add-assignment:hover{
   text-decoration: none;
