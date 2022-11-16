@@ -16,7 +16,7 @@
     var base_url = "{{ base_url }}";
   </script>
   <style>
-       body{
+    body{
       font-family: 'Poppins', sans-serif !important;
     }
     .jupyter-logo {
@@ -119,6 +119,16 @@
       font-family:'Poppins' sans-serif !important;
       font-weight:900;
     }
+     @media (max-width: 1440) and (max-height: 900) {
+      .career-logo {
+        width: 146px;
+        height: 42px;
+        margin-left: -2vw;
+      }
+      .nav-stacked>li:nth-last-of-type(1)>a, .nav-stacked>li:nth-of-type(1)>a {
+        font-size: 14px;
+      }
+     }
   </style>
   {%- block head -%}
   {%- endblock -%}
