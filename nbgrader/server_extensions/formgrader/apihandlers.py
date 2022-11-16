@@ -411,15 +411,15 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
 #                 connection.commit()
 #                 cur.close()
                 # Create a pandas dataframe with our grade information, and save it to s3 bucket
-#                 grades = pd.DataFrame(grades).set_index(['Learner', 'Assignment'])
-#                 grades.to_csv('grades.csv')
-#                 s3 = boto3.resource(
-#                     service_name='s3',
-#                     region_name='ap-south-1',
-#                     aws_access_key_id='AKIA6ND6FDTKBRA2VNK7',
-#                     aws_secret_access_key='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'
-#                 )
-#                 s3.Bucket('hcl-datalab').upload_file(Filename='grades.csv', Key='grades.csv')
+                grades = pd.DataFrame(grades).set_index(['Learner', 'Assignment'])
+                grades.to_csv('grades.csv')
+                s3 = boto3.resource(
+                    service_name='s3',
+                    region_name='ap-south-1',
+                    aws_access_key_id='AKIA6ND6FDTKBRA2VNK7',
+                    aws_secret_access_key='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'
+                )
+                s3.Bucket('hcl-datalab').upload_file(Filename='grades.csv', Key='grades.csv')
         else:
             self.write(json.dumps(release_feedback_api_response))
             
@@ -480,15 +480,15 @@ class ReleaseFeedbackHandler(BaseApiHandler):
 #                 cur.close()
                          
             # Create a pandas dataframe with our grade information, and save it to s3 bucket
-#                 grades = pd.DataFrame(grades).set_index(['Learner', 'Assignment'])
-#                 grades.to_csv('grades.csv')
-#                 s3 = boto3.resource(
-#                     service_name='s3',
-#                     region_name='ap-south-1',
-#                     aws_access_key_id='AKIA6ND6FDTKBRA2VNK7',
-#                     aws_secret_access_key='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'
-#                 )
-#                 s3.Bucket('hcl-datalab').upload_file(Filename='grades.csv', Key='grades.csv')  
+                grades = pd.DataFrame(grades).set_index(['Learner', 'Assignment'])
+                grades.to_csv('grades.csv')
+                s3 = boto3.resource(
+                    service_name='s3',
+                    region_name='ap-south-1',
+                    aws_access_key_id='AKIA6ND6FDTKBRA2VNK7',
+                    aws_secret_access_key='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'
+                )
+                s3.Bucket('hcl-datalab').upload_file(Filename='grades.csv', Key='grades.csv')  
         else:
             self.write(json.dumps(release_feedback_api_response))
 
