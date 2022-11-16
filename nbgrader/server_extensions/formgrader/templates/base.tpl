@@ -145,26 +145,70 @@
             font-weight: 900;
         }
 
-        @media (max-width: 1440px){
+        @media (max-width: 1440px) {
             .career-logo {
                 width: 146px;
                 height: 42px;
                 margin-left: -2vw;
             }
+
             .nav-stacked>li:nth-last-of-type(1)>a,
             .nav-stacked>li:nth-of-type(1)>a {
                 font-size: 14px;
+            }
         }
-        }
-         @media (max-width: 1366px){
+
+        @media (max-width: 1366px) {
             .nav-stacked>li:nth-of-type(1)>a {
                 font-size: 13px;
+            }
         }
+
+        @media (max-width: 1280px) {
+            .nav-stacked>li:nth-of-type(1)>a {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .nav-stacked>li:nth-of-type(1)>a {
+                font-size: 11px;
+            }
+        }
+
+
+
+        @media (max-width: 1200px) {
+
+            .career-logo {
+                width: 134px;
+                height: 38px;
+                margin-left: -4vw;
+            }
+
+
+            .col-md-2.sidenav {
+                width: 16%;
+            }
+
+        }
+
+        @media (max-width: 1024px) {
+            .career-logo {
+                width: 130px;
+                height: 37px;
+                margin-left: -5vw;
+            }
+
+            .col-md-2.sidenav {
+                width: 16%;
+            }
         }
     </style>
     {%- block head -%}
     {%- endblock -%}
 </head>
+
 <body>
     <div class="container-fluid">
         <div class="row">
