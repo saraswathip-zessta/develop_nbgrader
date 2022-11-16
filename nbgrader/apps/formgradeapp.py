@@ -21,7 +21,7 @@ And click on the "Formgrader" tab in the window that opens.
 
 class FormgradeApp(NbGrader):
 
-    name = u'Grading'
+    name = u'nbgrader formgrade'
     description = u'Grade notebooks using a webapp'
     examples = ""
 
