@@ -156,6 +156,11 @@
                 font-size: 14px;
         }
         }
+         @media (max-width: 1366px){
+            .nav-stacked>li:nth-of-type(1)>a {
+                font-size: 13px;
+        }
+        }
     </style>
     {%- block head -%}
     {%- endblock -%}
