@@ -240,6 +240,44 @@ text-align: center;
     background-color: #FFFFFF;
     font-family: Poppins;
 }
+ @media (max-width: 1440) and (max-height: 900) {
+ #switch_course_button {
+    width: 9vw;
+    border-radius: 2vw;
+    border: none;
+    margin-right: -19vw;
+    background-color: #D2EDFB;
+    font-size: 1vw;
+    font-weight: 100;
+    padding: 0.5vw 1vw 0.5vw 1vw;
+    height: 5vh;
+    font-weight: 600;
+}
+.div.dataTables_wrapper div.dataTables_filter input {
+    width: 19vw !important;
+}
+.footer {
+    width: 13vw;
+    padding:0;
+    padding-top: 1vh;
+}
+.footer .add-assignment {
+    font-size: 14px;
+}
+#course-list {
+    font-size: 1.1vw;
+}
+.select-div::after {
+    top: 1.8vh;
+}
+#cancel_course_button {
+    margin: 3vh 0vw 0vh 11vw;
+}
+#note_content {
+    font-size: 12px;
+    padding-top: 2vh;
+}
+ }
 </style>
 {%- endblock -%}
 {%- block title -%}
