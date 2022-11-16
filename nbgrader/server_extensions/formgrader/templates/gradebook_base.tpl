@@ -62,8 +62,8 @@ Manual Grading
       url: "api/customexport",
     }).done(function (res) {
       console.log(res);
-      if(res.length>0){
         const response = JSON.parse(res);
+        if(response.length>0){
         const dictionaryKeys = Object.keys(response[0]);
         const dictValuesAsCsv = response.map((dict) =>
           dictionaryKeys.map((key) => dict[key]).join(",")
