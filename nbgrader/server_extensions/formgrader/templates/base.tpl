@@ -55,18 +55,28 @@
     .nav-stacked>li>a:hover{
       background-color:#035B99
     }
-    .nav-stacked>li:nth-of-type(1)>a{
-      border-top-left-radius:8px !important;
-      border-top-right-radius:8px !important;
-      color:#FFFFFF;
-      font-size:20px;
+    .nav-stacked>li:nth-last-of-type(1)>a {
+      border-bottom-left-radius: 8px !important;
+      border-bottom-right-radius: 8px !important;
+      color: #FFFFFF;
+      font-size: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1rem;
     }
-    .nav-stacked>li:nth-last-of-type(1)>a{
-      border-bottom-left-radius:8px !important;
-      border-bottom-right-radius:8px !important;
-      color:#FFFFFF;
-      font-size:20px;
-    } 
+   .nav-stacked>li:nth-of-type(1)>a {
+      border-top-left-radius: 8px !important;
+      border-top-right-radius: 8px !important;
+      color: #FFFFFF;
+      font-size: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1rem;
+     }
     .career-logo {
       width: 175px;
       height: 50px;
