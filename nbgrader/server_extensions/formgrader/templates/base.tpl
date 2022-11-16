@@ -145,7 +145,7 @@
             font-weight: 900;
         }
 
-        @media (max-width: 1440px) and (max-height: 900px) {
+        @media (max-width: 1440px){
             .career-logo {
                 width: 146px;
                 height: 42px;
