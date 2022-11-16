@@ -151,7 +151,6 @@
                 height: 42px;
                 margin-left: -2vw;
             }
-
             .nav-stacked>li:nth-last-of-type(1)>a,
             .nav-stacked>li:nth-of-type(1)>a {
                 font-size: 14px;
@@ -161,7 +160,6 @@
     {%- block head -%}
     {%- endblock -%}
 </head>
-
 <body>
     <div class="container-fluid">
         <div class="row">
