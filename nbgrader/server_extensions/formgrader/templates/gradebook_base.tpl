@@ -61,7 +61,31 @@ Manual Grading
     $.ajax({
       url: "api/customexport",
     }).done(function (res) {
-      console.log(res)
+      console.log(res);
+      if(res.length>0){
+        const response = JSON.parse(res);
+        const dictionaryKeys = Object.keys(response[0]);
+        const dictValuesAsCsv = response.map((dict) =>
+          dictionaryKeys.map((key) => dict[key]).join(",")
+        );
+        const result = [dictionaryKeys.join(","), ...dictValuesAsCsv].join("\n");
+        var today = new Date();
+        const dd = String(today.getDate()).padStart(2, "0");
+        const mm = String(today.getMonth() + 1).padStart(2, "0");
+        const yyyy = today.getFullYear();
+        today = mm + "/" + dd + "/" + yyyy;
+        const downloadLink = document.createElement("a");
+        const blob = new Blob(["\ufeff", result]);
+        const url = URL.createObjectURL(blob);
+        downloadLink.href = url;
+        downloadLink.download = "data_" + today + ".csv";
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+      }
+      else{
+        alert("No data to export")
+      }
     });
   }
 </script>
