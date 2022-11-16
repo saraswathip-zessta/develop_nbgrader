@@ -242,18 +242,16 @@ text-align: center;
 }
     @media (max-width: 1440px) {
  #switch_course_button {
-    width: 9vw;
-    border-radius: 2vw;
-    border: none;
-    margin-right: -19vw;
-    background-color: #D2EDFB;
-    font-size: 1vw;
-    font-weight: 100;
-    padding: 0.5vw 1vw 0.5vw 1vw;
     height: 5vh;
-    font-weight: 600;
 }
-.div.dataTables_wrapper div.dataTables_filter input {
+#instructions-panel-default {
+    width: 70%;
+    border-radius: 1.2vw;
+}
+.panel-default>.panel-heading {
+    border-radius: 1.2vw;
+}
+div.dataTables_wrapper div.dataTables_filter input {
     width: 19vw !important;
 }
 .footer {
