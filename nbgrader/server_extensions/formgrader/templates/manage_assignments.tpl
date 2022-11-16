@@ -240,7 +240,7 @@ text-align: center;
     background-color: #FFFFFF;
     font-family: Poppins;
 }
-    @media (max-width: 1440px) and (max-height: 900px) { {
+    @media (max-width: 1440px) {
  #switch_course_button {
     width: 9vw;
     border-radius: 2vw;
