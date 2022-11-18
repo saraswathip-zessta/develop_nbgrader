@@ -401,25 +401,15 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
                             else:
                                 score['Score'] = submission.score
                             grades.append(score)
-                # connect to hub database and push the data to grading_data table
-#                 connection = psycopg2.connect(database="jupyterhub", user="admin", password="hub@123", host="postgresql-dev.jhub.svc.cluster.local", port=5432)
-#                 cur = connection.cursor()
-#                 cur.executemany(""" INSERT INTO 
-#   grading_data(trainer_username,course_name,assignment_name,learner_username,assignment_max_score,learner_score,released_time_stamp)
-#                                       VALUES
-#                                       (%(Trainer)s,%(Course_Name)s,%(Assignment)s,%(Learner)s,%(Max_Score)s, %(Score)s, %(Date_Time)s) """, grades)
-#                 connection.commit()
-#                 cur.close()
-                # Create a pandas dataframe with our grade information, and save it to s3 bucket
-                grades = pd.DataFrame(grades).set_index(['Learner', 'Assignment'])
-                grades.to_csv('grades.csv')
-                s3 = boto3.resource(
-                    service_name='s3',
-                    region_name='ap-south-1',
-                    aws_access_key_id='AKIA6ND6FDTKBRA2VNK7',
-                    aws_secret_access_key='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'
-                )
-                s3.Bucket('hcl-datalab').upload_file(Filename='grades.csv', Key='grades.csv')
+#                 connect to hub database and push the data to grading_data table
+                connection = psycopg2.connect(database="jupyterhub", user="admin", password="hub@123", host="postgresql-dev.jhub.svc.cluster.local", port=5432)
+                cur = connection.cursor()
+                cur.executemany(""" INSERT INTO 
+  grading_data(trainer_username,course_name,assignment_name,learner_username,assignment_max_score,learner_score,released_time_stamp)
+                                      VALUES
+                                      (%(Trainer)s,%(Course_Name)s,%(Assignment)s,%(Learner)s,%(Max_Score)s, %(Score)s, %(Date_Time)s) """, grades)
+                connection.commit()
+                cur.close()
         else:
             self.write(json.dumps(release_feedback_api_response))
             
@@ -470,30 +460,17 @@ class ReleaseFeedbackHandler(BaseApiHandler):
                                     score['Score'] = submission.score
                                 grades.append(score)
                 # connect to hub database and push the data to grading_data table
-#                 connection = psycopg2.connect(database="jupyterhub", user="admin", password="hub@123", host="postgresql-dev.jhub.svc.cluster.local", port=5432)
-#                 cur = connection.cursor()
-#                 cur.executemany(""" INSERT INTO 
-#   grading_data(trainer_username,course_name,assignment_name,learner_username,assignment_max_score,learner_score,released_time_stamp)
-#                                       VALUES
-#                                       (%(Trainer)s,%(Course_Name)s,%(Assignment)s,%(Learner)s,%(Max_Score)s, %(Score)s, %(Date_Time)s) """, grades)
-#                 connection.commit()
-#                 cur.close()
-                         
-            # Create a pandas dataframe with our grade information, and save it to s3 bucket
-                grades = pd.DataFrame(grades).set_index(['Learner', 'Assignment'])
-                grades.to_csv('grades.csv')
-                s3 = boto3.resource(
-                    service_name='s3',
-                    region_name='ap-south-1',
-                    aws_access_key_id='AKIA6ND6FDTKBRA2VNK7',
-                    aws_secret_access_key='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'
-                )
-                s3.Bucket('hcl-datalab').upload_file(Filename='grades.csv', Key='grades.csv')  
+                connection = psycopg2.connect(database="jupyterhub", user="admin", password="hub@123", host="postgresql-dev.jhub.svc.cluster.local", port=5432)
+                cur = connection.cursor()
+                cur.executemany(""" INSERT INTO 
+  grading_data(trainer_username,course_name,assignment_name,learner_username,assignment_max_score,learner_score,released_time_stamp)
+                                      VALUES
+                                      (%(Trainer)s,%(Course_Name)s,%(Assignment)s,%(Learner)s,%(Max_Score)s, %(Score)s, %(Date_Time)s) """, grades)
+                connection.commit()
+                cur.close()  
         else:
             self.write(json.dumps(release_feedback_api_response))
-
-
-
+            
 default_handlers = [
     (r"/formgrader/api/status", StatusHandler),
     (r"/formgrader/api/customexport",CustomExportHandler),
