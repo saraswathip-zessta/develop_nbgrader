@@ -622,6 +622,7 @@ Manage Students</a></li>
 {%endblock%}
 {% block script%}
 <script>
+const hub_url='https://dslab-dev.hcl-edtech.com/';
     console.log("In script");
     const switchCourseButton = document.getElementById("switch_course_button");
     const courseModal = document.getElementById("changeCourseModal");
@@ -631,7 +632,7 @@ Manage Students</a></li>
     const selected_course = document.getElementById("course-list");
     window.onload = function () {
         const userAction = async () => {
-            const response = await fetch('https://data-labs.hcl-edtech.com/services/ngshare/courses');
+            const response = await fetch(`${hub_url}services/ngshare/courses`);
             const myJson = await response.json();
             var courses_list = myJson.courses;
             $.each(courses_list, function (item, value) {
@@ -661,7 +662,7 @@ Manage Students</a></li>
             console.log(response);
             console.log(typeof (response.success))
             if (response.success == true || "True" || "true") {
-                window.location.href = 'https://data-labs.hcl-edtech.com/hub/home';
+                window.location.href = `${hub_url}hub/home`;
             }
         }
         );
