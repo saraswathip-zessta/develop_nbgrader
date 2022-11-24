@@ -31,12 +31,12 @@
             width: 12%;
         }
 
-        .col-md-2.sidenav {
-            border-radius: 8px !important;
+       .col-md-2.sidenav {
+            border-radius: 1.5rem !important;
             background: #006BB6;
             width: 14%;
             margin-left: 0.5%;
-            padding-top: 0px;
+            padding-top: 0;
             padding-left: 0px !important;
             padding-right: 0px !important;
         }
@@ -47,16 +47,16 @@
 
         .page-header {
             border-bottom: none;
-            padding-left: 50px;
+            padding-left: calc(4vw - 2rem);
         }
 
         .page-header:nth-of-type(2) {
             padding-left: 0px;
         }
 
-        .table.table-hover {
+       .table.table-hover {
             box-sizing: border-box;
-            border: 2px solid #5FBEF0;
+            border: 0.2rem solid #5FBEF0;
         }
 
         .nav-stacked li a {
@@ -66,12 +66,12 @@
         .nav-stacked>li>a:hover {
             background-color: #035B99
         }
-
+        
         .nav-stacked>li:nth-last-of-type(1)>a {
-            border-bottom-left-radius: 8px !important;
-            border-bottom-right-radius: 8px !important;
+            border-bottom-left-radius: 1rem !important;
+            border-bottom-right-radius: 1rem !important;
             color: #FFFFFF;
-            font-size: 20px;
+            font-size: 2rem;
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
@@ -79,11 +79,11 @@
             gap: 1rem;
         }
 
-        .nav-stacked>li:nth-of-type(1)>a {
-            border-top-left-radius: 8px !important;
-            border-top-right-radius: 8px !important;
+      .nav-stacked>li:nth-of-type(1)>a {
+            border-top-left-radius: 1rem !important;
+            border-top-right-radius: 1rem !important;
             color: #FFFFFF;
-            font-size: 20px;
+            font-size: 2rem;
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
@@ -91,9 +91,9 @@
             gap: 1rem;
         }
 
-        .career-logo {
-            width: 175px;
-            height: 50px;
+      .career-logo {
+            width: calc(10vw - 2rem);
+            height: calc(7vh - 2rem);
         }
 
         .col-sm-6:nth-of-type(1) {
@@ -105,14 +105,12 @@
         }
 
         .form-control.input-sm {
-            border-radius: 8px;
-            width: 250px !important;
             border-color: #5FBEF0;
         }
 
         label {
-            font-weight: 900;
-            font-size: 16px;
+            font-weight: 900 !important;
+            font-size: 1.8rem;
             color: #035B99;
         }
 
@@ -127,8 +125,8 @@
 
         th,
         td {
-            padding-left: 20px !important;
-            padding-right: 20px !important;
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
             text-align: center;
         }
 
@@ -143,66 +141,6 @@
         h1 {
             font-family: 'Poppins' sans-serif !important;
             font-weight: 900;
-        }
-
-        @media (max-width: 1440px) {
-            .career-logo {
-                width: 146px;
-                height: 42px;
-                margin-left: -2vw;
-            }
-
-            .nav-stacked>li:nth-last-of-type(1)>a,
-            .nav-stacked>li:nth-of-type(1)>a {
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 1366px) {
-            .nav-stacked>li:nth-of-type(1)>a {
-                font-size: 13px;
-            }
-        }
-
-        @media (max-width: 1280px) {
-            .nav-stacked>li:nth-of-type(1)>a {
-                font-size: 12px;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            .nav-stacked>li:nth-of-type(1)>a {
-                font-size: 11px;
-            }
-        }
-
-
-
-        @media (max-width: 1200px) {
-
-            .career-logo {
-                width: 134px;
-                height: 38px;
-                margin-left: -4vw;
-            }
-
-
-            .col-md-2.sidenav {
-                width: 16%;
-            }
-
-        }
-
-        @media (max-width: 1024px) {
-            .career-logo {
-                width: 130px;
-                height: 37px;
-                margin-left: -5vw;
-            }
-
-            .col-md-2.sidenav {
-                width: 16%;
-            }
         }
     </style>
     {%- block head -%}
