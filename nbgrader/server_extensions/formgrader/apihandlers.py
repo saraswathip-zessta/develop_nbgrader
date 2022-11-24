@@ -12,78 +12,6 @@ import boto3
 import datetime
 from io import StringIO  
 import requests
-    
-class ChangeCourseHandler(BaseApiHandler):
-    @web.authenticated
-    @check_xsrf
-    def get(self,courseName):
-        try:
-            isCourseDirectory=Path("/home/jovyan/"+courseName).is_dir()
-            if not isCourseDirectory:
-                path = os.path.join("/home/jovyan", courseName)
-                os.mkdir(path)
-            configFile=Path("/home/jovyan/nbgrader_config.py")
-            if not configFile.is_file():
-                configFile=open("/home/jovyan/nbgrader_config.py", "x")
-            else:
-                configFile=open("/home/jovyan/nbgrader_config.py",'w')
-            configFile.write("c = get_config()")
-            configFile.write("\n")
-            configFile.write("c.CourseDirectory.root = '/home/jovyan/"+courseName+"'")
-            configFile.write("\n")
-            configFile.write("c.CourseDirectory.course_id='"+courseName+"'")
-            configFile.close()
-            userName=get_username()
-            hubHeaders={
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json',
-                'Authorization': 'token 1199d73de2bc4d37900e19c6539833e4'
-                }
-#             serverUrl='https://data-labs.hcl-edtech.com/hub/api/users/'+userName+'/server'
-#             stopServerResponse = requests.delete(serverUrl, headers=hubHeaders)
-#             if(stopServerResponse.status_code==204):
-#                 startServerResponse=requests.post(serverUrl,headers=hubHeaders)
-            self.write(json.dumps({'success':True,'userName':userName,'course':courseName}))
-        except:
-            self.write(json.dumps({'success':False})) 
-            
-    
-class CustomExportHandler(BaseApiHandler):
-    @web.authenticated
-    @check_xsrf
-    def get(self):
-        try:
-            with self.gradebook as gb:
-                grades = []
-
-                # Loop over each assignment in the database
-                for assignment in gb.assignments:
-
-                    # Loop over each student in the database
-                    for student in gb.students:
-
-                    # Create a dictionary that will store information about this student's
-                    # submitted assignment
-                        score = {}
-                        score['Learner'] = student.id
-                        score['Assignment'] = assignment.name
-                        score['Max_Score'] = assignment.max_score
-                        score['Course_Name']=assignment.course_id
-
-                    # Try to find the submission in the database. If it doesn't exist, the
-                    # `MissingEntry` exception will be raised, which means the student
-                    # didn't submit anything, so we assign them a score of zero.
-                        try:
-                            submission = gb.find_submission(assignment.name, student.id)
-                        except MissingEntry:
-                            score['Score'] = 0.0
-                        else:
-                            score['Score'] = submission.score
-
-                        grades.append(score)
-                self.write(json.dumps(grades))
-        except:
-            pass
 
 class StatusHandler(BaseApiHandler):
     @web.authenticated
@@ -370,6 +298,9 @@ class ReleaseAllFeedbackHandler(BaseApiHandler):
     @check_xsrf
     @check_notebook_dir
     def post(self, assignment_id):
+
+#       Custom code to push the grades to grading_data table in Hub database
+
         release_feedback_api_response=self.api.release_feedback(assignment_id)
         success=release_feedback_api_response['success']
         trainer_username=get_username()
@@ -420,13 +351,15 @@ class GenerateFeedbackHandler(BaseApiHandler):
     def post(self, assignment_id, student_id):
         self.write(json.dumps(self.api.generate_feedback(assignment_id, student_id)))
 
-
 class ReleaseFeedbackHandler(BaseApiHandler):
     @web.authenticated
     @check_xsrf
     @check_notebook_dir
     def post(self, assignment_id, student_id):
 #         self.write(json.dumps(self.api.release_feedback(assignment_id, student_id)))
+
+#         Custom code to push the grades to grading_data table in Hub database
+
         release_feedback_api_response=self.api.release_feedback(assignment_id, student_id)
         success=release_feedback_api_response['success']
         trainer_username=get_username()
@@ -470,6 +403,82 @@ class ReleaseFeedbackHandler(BaseApiHandler):
                 cur.close()  
         else:
             self.write(json.dumps(release_feedback_api_response))
+            
+            
+# Custom API Handlers
+
+# API Handler for switching course for an instructor in Manage Assignments Tab.            
+class ChangeCourseHandler(BaseApiHandler):
+    @web.authenticated
+    @check_xsrf
+    def get(self,courseName):
+        try:
+            isCourseDirectory=Path("/home/jovyan/"+courseName).is_dir()
+            if not isCourseDirectory:
+                path = os.path.join("/home/jovyan", courseName)
+                os.mkdir(path)
+            configFile=Path("/home/jovyan/nbgrader_config.py")
+            if not configFile.is_file():
+                configFile=open("/home/jovyan/nbgrader_config.py", "x")
+            else:
+                configFile=open("/home/jovyan/nbgrader_config.py",'w')
+            configFile.write("c = get_config()")
+            configFile.write("\n")
+            configFile.write("c.CourseDirectory.root = '/home/jovyan/"+courseName+"'")
+            configFile.write("\n")
+            configFile.write("c.CourseDirectory.course_id='"+courseName+"'")
+            configFile.close()
+            userName=get_username()
+            hubHeaders={
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json',
+                'Authorization': 'token 1199d73de2bc4d37900e19c6539833e4'
+                }
+#             serverUrl='https://data-labs.hcl-edtech.com/hub/api/users/'+userName+'/server'
+#             stopServerResponse = requests.delete(serverUrl, headers=hubHeaders)
+#             if(stopServerResponse.status_code==204):
+#                 startServerResponse=requests.post(serverUrl,headers=hubHeaders)
+            self.write(json.dumps({'success':True,'userName':userName,'course':courseName}))
+        except:
+            self.write(json.dumps({'success':False})) 
+            
+# Custom API Handler for exporting grading data to a CSV for a particular course assignments submissions.  
+class CustomExportHandler(BaseApiHandler):
+    @web.authenticated
+    @check_xsrf
+    def get(self):
+        try:
+            with self.gradebook as gb:
+                grades = []
+
+                # Loop over each assignment in the database
+                for assignment in gb.assignments:
+
+                    # Loop over each student in the database
+                    for student in gb.students:
+
+                    # Create a dictionary that will store information about this student's
+                    # submitted assignment
+                        score = {}
+                        score['Learner'] = student.id
+                        score['Assignment'] = assignment.name
+                        score['Max_Score'] = assignment.max_score
+                        score['Course_Name']=assignment.course_id
+
+                    # Try to find the submission in the database. If it doesn't exist, the
+                    # `MissingEntry` exception will be raised, which means the student
+                    # didn't submit anything, so we assign them a score of zero.
+                        try:
+                            submission = gb.find_submission(assignment.name, student.id)
+                        except MissingEntry:
+                            score['Score'] = 0.0
+                        else:
+                            score['Score'] = submission.score
+
+                        grades.append(score)
+                self.write(json.dumps(grades))
+        except:
+            pass
             
 default_handlers = [
     (r"/formgrader/api/status", StatusHandler),
