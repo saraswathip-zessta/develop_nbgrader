@@ -17,29 +17,27 @@
 
     .panel-body,
     .panel-group {
-        border-top: 20px !important;
         background-color: #FFFFFF;
     }
 
-    div.dataTables_wrapper div.dataTables_filter input {
-        width: 20vw !important;
-        border-radius: 2vw;
-        height: 4vh;
+     div.dataTables_wrapper div.dataTables_filter input {
+        width: calc(20vw - 2rem) !important;
+        border-radius: 2rem;
+        height: calc(6vh - 2rem);
     }
 
     .panel-default>.panel-heading {
         background-color: #FFFFFF;
-        border-radius: 1vw;
+        border-radius: 1rem;
     }
 
     .footer {
-        margin-left: 15.5vw;
-        margin-top: 2vh;
+        margin-left: calc(16vw - 2rem);
+        margin-top: 2%;
         border-radius: 20px;
         background-color: #5FBEF0;
         height: 4.5vh;
-        width: 11vw;
-        padding-top: 1.3vh;
+        width: 12vw;
     }
 
     .footer:hover {
@@ -48,15 +46,14 @@
 
     .glyphicon-plus {
         color: #FFFFFF;
-        margin-left: 1vw;
-        margin-right: 0.5vw;
+        padding: 1.5rem;
     }
 
-    .footer .add-assignment {
-        border-radius: 20px;
+     .footer .add-assignment {
+        border-radius: 2rem;
         color: #FFFFFF;
         font-weight: 600;
-        font-size: 15px;
+        font-size: 1.5rem;
     }
 
     .footer .add-assignment:hover {
@@ -66,13 +63,13 @@
 
     .panel .panel-default {
         border-color: #5FBEF0;
-        border-radius: 20px !important;
+        border-radius: 2rem !important;
     }
 
     #headingone,
     .panel-body {
         background-color: #FFFFFF !important;
-        border-radius: 20px !important;
+        border-radius: 2rem !important;
     }
 
     .panel-title {
@@ -81,7 +78,7 @@
     }
 
     .modal-content {
-        border-radius: 20px;
+        border-radius: 2rem;
     }
 
     .align-middle {
@@ -136,33 +133,31 @@
     }
 
     #switch_course_button {
-        width: 9vw;
-        border-radius: 2vw;
+        width: calc(10vw - 2rem);
+        height: calc(7vh - 2rem);
+        border-radius: 3rem;
         border: none;
-        margin-right: -19vw;
+        margin-right: calc(-19vw + 0rem);
         background-color: #D2EDFB;
-        font-size: 1vw;
+        font-size: 1.8rem;
         font-weight: 100;
-        padding: 0.5vw 1vw 0.5vw 1vw;
     }
 
     #change_course_button {
-        width: 6vw;
-        height: 4vh;
-        border-radius: 2vw;
+        width: calc(8vw - 2rem);
+        height: calc(6vh - 2rem);
+        border-radius: 2rem;
         border: none;
-        margin: 3vh -19vw 0vh 4vw;
+        margin: 3rem;
         background-color: #D2EDFB;
-        font-size: 1vw;
+        font-size: 2rem;
         font-weight: 100;
-        padding: 0.5vw 0.5vw 0.5vw 0.5vw;
     }
 
-    .courseModal {
+    .changeCourseModal {
         display: none;
         position: fixed;
         z-index: 2;
-        padding-top: 100px;
         left: 0;
         top: 0;
         width: 100%;
@@ -171,21 +166,21 @@
         background-color: rgba(0, 0, 0, 0.4);
     }
 
-    .courseModalContent {
+   .courseModalContent {
         background-color: #fefefe;
-        margin: 9vh auto;
-        padding: 20px;
+        margin: calc(35vh - 2rem) auto;
+        padding: 3rem;
         border: 1px solid #5FBEF0;
         width: 25%;
-        border-radius: 15px;
-        height: 25vh;
+        border-radius: 3rem;
+        height: 30%;
         box-shadow: 0px 2px 13px rgb(170 170 170 / 27%);
     }
 
     .courseClose {
         color: #000000;
         float: right;
-        font-size: 28px;
+        font-size: 2rem;
         font-weight: bold;
     }
 
@@ -207,31 +202,32 @@
         display: flex;
     }
 
-    #courseLabel {
+     #courseLabel {
         font-family: 'Gothic A1';
         font-style: normal;
-        font-size: 2vh;
+        font-size: 2rem;
         line-height: 3vh;
         color: black;
         font-weight: 400 !important;
-        margin: 3vh 0vw 2vh 2.5vw;
+        margin: 3rem;
     }
 
-    #cancel_course_button {
+      #cancel_course_button {
         background: white;
-        border-radius: 41vh;
+        border-radius: 2rem;
         border-color: #5FBEF0;
-        margin: 3.2vh 0vw 0vh 11vw;
+        margin: 3rem;
         font-family: 'Poppins';
         font-style: normal;
-        font-size: 2vh;
+        font-size: 2rem;
         line-height: 2vh;
         color: #5FBEF0;
-        width: 6vw;
-        height: 3.9vh;
+        width: calc();
         position: absolute;
         border-width: 0.1vw !important;
         border-style: double;
+        width: calc(8vw - 2rem);
+        height: calc(6vh - 2rem);
     }
 
     .select-div::after {
@@ -244,226 +240,39 @@
 
     .select-div::after {
         position: absolute;
-        top: 2vh;
-        right: 1vw;
+        top: calc(4vh - 2rem);
+        right: calc(4vw - 2rem);
     }
 
-    #course-list {
+     #course-list {
         appearance: none;
-        margin: 3vh 0vh 0vh 3vh;
-        width: 9vw;
+        margin: 3rem 3rem 3rem 3rem;
+        width: calc(9vw - 2rem);
         height: 3.5vh;
         background: #FFFFFF;
         border: 0.1vw solid #5FBEF0;
-        border-radius: 8vh;
+        border-radius: 2rem;
         font-family: 'Poppins';
         font-style: normal;
-        font-size: 2vh;
-        padding: 0vh 0vw 0vh 0.9vw;
+        font-size: 1.8rem;
+        padding: 0.5rem 0.5rem 0.5rem 1rem;
+        font-weight: 100;
     }
 
     #note_content {
         color: #FF0000;
-        font-size: 14px;
+        font-size: 1.5rem;
         font-weight: 400;
-        padding-top: 3vh;
         text-align: center;
     }
 
-    #instructions-panel-default {
+   #instructions-panel-default {
         width: 70%;
-        border-radius: 1vw;
+        border-radius: 2rem;
         float: right;
         border-color: #5FBEF0;
         background-color: #FFFFFF;
         font-family: Poppins;
-    }
-
-    @media (max-width: 1440px) {
-        #switch_course_button {
-            height: 5vh;
-        }
-
-        #instructions-panel-default {
-            width: 70%;
-            border-radius: 1.2vw;
-        }
-
-        .panel-default>.panel-heading {
-            border-radius: 1.2vw;
-        }
-
-        div.dataTables_wrapper div.dataTables_filter input {
-            width: 19vw !important;
-            height: 4.8vh;
-        }
-
-        .footer {
-            width: 13vw;
-            padding: 0;
-            padding-top: 1vh;
-        }
-
-        .footer .add-assignment {
-            font-size: 14px;
-        }
-
-        #course-list {
-            font-size: 1.1vw;
-        }
-
-        .select-div::after {
-            top: 1.8vh;
-        }
-
-        #cancel_course_button {
-            margin: 3vh 0vw 0vh 11vw;
-        }
-
-        #note_content {
-            font-size: 12px;
-            padding-top: 2vh;
-        }
-    }
-
-    @media (max-width: 1366px) {
-        .footer .add-assignment {
-            font-size: 13px;
-        }
-
-        div.dataTables_wrapper div.dataTables_filter input {
-            height: 4.9vh;
-        }
-
-        #course-list {
-            margin: 3vh 0vh 0vh 2vh;
-        }
-    }
-
-    @media (max-width: 1280px) {
-        div.dataTables_wrapper div.dataTables_filter input {
-            height: 3.8vh;
-        }
-
-        .footer {
-            width: 15vw;
-        }
-
-        #courseLabel {
-            margin: 3vh 0vw 2vh 0.5vw;
-        }
-
-        #course-list {
-            margin: 3vh 0vh 0vh 2vh;
-            width: 9vw;
-            padding: 0vh 0vw 0vh 0.9vw;
-        }
-
-        .select-div::after {
-            top: 2vh;
-        }
-
-        #change_course_button {
-            font-size: 1.5vw;
-        }
-
-        #cancel_course_button {
-            height: 3.7vh;
-        }
-
-        .footer {
-            margin-left: 17.5vw;
-            height: 5.5vh;
-            width: 14vw;
-        }
-
-    }
-
-    @media (max-width: 1200px) {
-        #switch_course_button {
-            margin-right: -29vw;
-            height: 6vh;
-            width: 12vw;
-        }
-
-        div.dataTables_wrapper div.dataTables_filter input {
-            width: 21vw !important;
-            border-radius: 2vw;
-            height: 5vh;
-        }
-
-        .panel-group {
-            width: 110%;
-        }
-
-        .footer {
-            margin-left: 17.5vw;
-            height: 5.5vh;
-            width: 15vw;
-            padding-top: 1.2vh;
-        }
-
-        .select-div::after {
-            top: 1vh;
-        }
-
-        #note_content {
-            padding-top: 1.4vh;
-        }
-
-        .courseModalContent {
-            margin: 17vh auto;
-        }
-
-    }
-
-    @media (max-width: 1024px) {
-        #switch_course_button {
-            height: 6vh;
-            width: 13vw;
-            font-size: 1.5vw;
-            margin-right: -44vw;
-        }
-
-        div.dataTables_wrapper div.dataTables_filter input {
-            height: 5vh;
-            width: 24vw !important;
-        }
-
-        .panel-group {
-            width: 130%;
-        }
-
-        .footer {
-            margin-left: 17.5vw;
-            height: 5.5vh;
-            width: 18vw;
-        }
-
-        #courseLabel {
-            margin: 3vh 0vw 2vh 1.5vw;
-        }
-
-        #course-list {
-            font-size: 1.3vw;
-            width: 10vw;
-        }
-
-        .select-div::after {
-            top: 1.2vh;
-            right: 0.7vw;
-        }
-
-        #change_course_button {
-            width: 7vw;
-            font-size: 1.4vw;
-        }
-
-        #cancel_course_button {
-            margin: 3vh 0vw 0vh 16vw;
-            width: 7vw;
-
-        }
     }
 </style>
 {%- endblock -%}
@@ -489,11 +298,12 @@ Manage Assignments
                     <button type="button" id="change_course_button">Change</button>
                 </div>
                 <div>
+                    <p id='note_content'>Note: Restart your server for the changes to apply.</p>
+                </div>
+                <div>
                     <button type="button" id="cancel_course_button">Cancel</button>
                 </div>
             </div>
-            <p id='note_content'>Note: Once you click 'Change', you will be redirected to Home. Please stop and start
-                the server for the changes to reflect.</p>
         </div>
     </div>
 </div>
