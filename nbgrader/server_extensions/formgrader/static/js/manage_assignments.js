@@ -494,9 +494,9 @@ var createAssignmentModal = function () {
             modal.modal('hide');
             return;
         }
-        if (name.indexOf("+") != -1) {
+        if (name.indexOf("+") != -1 && name.indexOf(" ")!= -1) {
             var err = $("#create-error");
-            err.text("Assignment names may not include the '+' character.");
+            err.text("Assignment names may not include the '+' or space character.");
             err.show();
             return;
         } else {
