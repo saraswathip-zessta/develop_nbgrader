@@ -28,7 +28,7 @@
 
     .panel-default>.panel-heading {
         background-color: #FFFFFF;
-        border-radius: 1rem;
+        border-radius: 2rem;
     }
 
     .footer {
@@ -294,11 +294,11 @@ Manage Assignments
                 </div>
             </div>
             <div class="row-flex">
+                    <p id='note_content'>Note: Restart your server for the changes to apply.</p>
+            </div>
+            <div class="row-flex">
                 <div>
                     <button type="button" id="change_course_button">Change</button>
-                </div>
-                <div>
-                    <p id='note_content'>Note: Restart your server for the changes to apply.</p>
                 </div>
                 <div>
                     <button type="button" id="cancel_course_button">Cancel</button>
