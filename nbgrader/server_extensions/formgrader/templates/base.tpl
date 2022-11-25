@@ -93,7 +93,7 @@
 
       .career-logo {
             width: calc(10vw - 2rem);
-            height: calc(7vh - 2rem);
+            height: 5vh;
         }
 
         .col-sm-6:nth-of-type(1) {
