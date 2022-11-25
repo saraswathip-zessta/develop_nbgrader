@@ -23,7 +23,7 @@
     div.dataTables_wrapper div.dataTables_filter input {
         width: 20vw !important;
         border-radius: 2rem;
-        height: calc(6vh - 2rem);
+        height: 4rem;
     }
 
     .panel-default>.panel-heading {
@@ -34,9 +34,9 @@
     .footer {
         margin-left: calc(16vw - 2rem);
         margin-top: 2%;
-        border-radius: 20px;
+        border-radius: 3rem;
         background-color: #5FBEF0;
-        height: 4.5vh;
+        height: 4.6rem;
         width: 12vw;
     }
 
@@ -132,14 +132,14 @@
         justify-content: space-between;
     }
 
-    #switch_course_button {
+      #switch_course_button {
         width: calc(10vw - 2rem);
-        height: 5vh;
+        height: 6rem;
         border-radius: 3rem;
         border: none;
         margin-right: calc(-19vw + 0rem);
         background-color: #D2EDFB;
-        font-size: 1.8rem;
+        font-size: 2.5rem;
         font-weight: 100;
     }
 
