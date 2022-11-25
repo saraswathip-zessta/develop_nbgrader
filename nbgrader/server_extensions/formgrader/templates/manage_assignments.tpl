@@ -202,6 +202,9 @@
         display: flex;
         align-self: center;
     }
+    .button-row{
+        margin-left: calc(2vw - 21rem);
+    }
 
      #courseLabel {
         font-family: 'Gothic A1';
@@ -297,7 +300,7 @@ Manage Assignments
             <div class="row-flex">
                     <p id='note_content'>Note: Restart your server for the changes to apply.</p>
             </div>
-            <div class="row-flex">
+            <div class="row-flex button-row">
                 <div>
                    <button type="button" id="change_course_button">Change</button>
                 </div>
