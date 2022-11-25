@@ -200,6 +200,7 @@
 
     .row-flex {
         display: flex;
+        align-self: center;
     }
 
      #courseLabel {
@@ -297,12 +298,8 @@ Manage Assignments
                     <p id='note_content'>Note: Restart your server for the changes to apply.</p>
             </div>
             <div class="row-flex">
-                <div>
-                    <button type="button" id="change_course_button">Change</button>
-                </div>
-                <div>
-                    <button type="button" id="cancel_course_button">Cancel</button>
-                </div>
+                   <button type="button" id="change_course_button">Change</button>
+                   <button type="button" id="cancel_course_button">Cancel</button>
             </div>
         </div>
     </div>
@@ -465,17 +462,21 @@ const hub_url='https://dslab-dev.hcl-edtech.com/';
     }
     change_course_button.onclick = function () {
         const selectedCourse = selected_course.options[selected_course.selectedIndex].text;
-        console.log(selectedCourse);
-        $.ajax({
-            url: "formgrader/api/changecourse/" + selectedCourse,
-        }).done(function (response) {
-            console.log(response);
-            console.log(typeof (response.success))
-            if (response.success == true || "True" || "true") {
-                window.location.href = `${hub_url}hub/home`;
-            }
+        if(selectedCourse=='select course'){
+           selected_course.style.style.border = '0.1vw solid red';
         }
-        );
+        else{
+            $.ajax({
+                url: "formgrader/api/changecourse/" + selectedCourse,
+            }).done(function (response) {
+                console.log(response);
+                console.log(typeof (response.success))
+                if (response.success == true || "True" || "true") {
+                    window.location.href = `${hub_url}hub/home`;
+                }
+            }
+            );
+        }
     }
     window.onclick = function (event) {
         if (event.target == courseModal) {
