@@ -20,8 +20,8 @@
         background-color: #FFFFFF;
     }
 
-     div.dataTables_wrapper div.dataTables_filter input {
-        width: calc(20vw - 2rem) !important;
+    div.dataTables_wrapper div.dataTables_filter input {
+        width: 20vw !important;
         border-radius: 2rem;
         height: calc(6vh - 2rem);
     }
@@ -134,7 +134,7 @@
 
     #switch_course_button {
         width: calc(10vw - 2rem);
-        height: calc(7vh - 2rem);
+        height: 5vh;
         border-radius: 3rem;
         border: none;
         margin-right: calc(-19vw + 0rem);
@@ -470,7 +470,7 @@ const hub_url='https://dslab-dev.hcl-edtech.com/';
     change_course_button.onclick = function () {
         const selectedCourse = selected_course.options[selected_course.selectedIndex].text;
         if(selectedCourse=='select course'){
-           selected_course.style.style.border = '0.1vw solid red';
+           selected_course.style.border = '0.1vw solid red';
         }
         else{
             $.ajax({
