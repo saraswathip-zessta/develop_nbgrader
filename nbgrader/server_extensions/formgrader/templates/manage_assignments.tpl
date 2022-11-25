@@ -298,8 +298,12 @@ Manage Assignments
                     <p id='note_content'>Note: Restart your server for the changes to apply.</p>
             </div>
             <div class="row-flex">
+                <div>
                    <button type="button" id="change_course_button">Change</button>
+                </div>
+                <div>
                    <button type="button" id="cancel_course_button">Cancel</button>
+                </div>
             </div>
         </div>
     </div>
