@@ -482,8 +482,8 @@ div.dataTables_wrapper div.dataTables_filter input {
 }}
 @media (max-width: 1528px){
 .courseModalContent {
-    width: 35%;
-    height: 30%;
+    width: 40%;
+    height: 40%;
 }
 #course-list {
     width: calc(12vw - 2rem);
