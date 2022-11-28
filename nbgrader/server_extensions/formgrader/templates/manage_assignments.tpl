@@ -154,6 +154,7 @@
         font-weight: 100;
     }
 
+  
     .changeCourseModal {
         display: none;
         position: fixed;
@@ -165,15 +166,14 @@
         overflow: auto;
         background-color: rgba(0, 0, 0, 0.4);
     }
-
     .courseModalContent {
         background-color: #fefefe;
         margin: calc(35vh - 2rem) auto;
         padding: 3rem;
         border: 1px solid #5FBEF0;
-        width: 25%;
+        width: 40%;
         border-radius: 3rem;
-        height: 30%;
+        height: 40%;
         box-shadow: 0px 2px 13px rgb(170 170 170 / 27%);
     }
 
@@ -279,13 +279,6 @@
         background-color: #FFFFFF;
         font-family: Poppins;
     }
-
-    #warning-windows,
-    #warning-exchange,
-    #warning-course-id {
-        display: none;
-    }
-
     @media (max-width: 2560px) {
         #switch_course_button {
             width: calc(10vw - 2rem);
@@ -355,295 +348,235 @@
             width: calc(10.8vw - 2rem);
         }
     }
-
-    @media (max-width: 2374px) {
-        .select-div::after {
-            top: calc(3.8vh - 2rem);
-        }
+    @media (max-width: 2374px){
+.select-div::after {
+    top: calc(3.8vh - 2rem);
+}}
+    @media (max-width: 2330px){
+	.footer {
+	    width: calc(11.2vw - 2rem);
+	}
     }
+    @media (max-width: 2304px){
+.footer {
+    margin-left: calc(14vw - 2rem);
+}}
+    @media (max-width: 2300px){
+#switch_course_button {
+    margin-right: calc(-18vw + 0rem);
+}
+.page-header {
+    padding-left: calc(1.4vw - 2rem);
+}
+}
+    @media (max-width: 2220px){
+.footer {
+    width: calc(12vw - 2rem);
+}}
+@media (max-width: 2374px){
+.select-div::after {
+    top: calc(4vh - 2rem);
+}
+}
+@media (max-width: 2100px){
+.page-header {
+    padding-left: calc(2.4vw - 2rem);
+}
+}
+@media (max-width: 2000px){
+.footer {
+    width: calc(13vw - 2rem);
+    margin-left: calc(15vw - 2rem);
 
-    @media (max-width: 2330px) {
-        .footer {
-            width: calc(11.2vw - 2rem);
-        }
+}
+.select-div::after {
+    top: calc(4.2vh - 2rem);
+}
+}
+@media (max-width: 1978px){
+.courseModalContent {
+    width: 30%;
+    height: 30%;
+}
+}
+@media (max-width: 1949px){
+.page-header {
+    padding-left: calc(3.4vw - 2rem);
+}
+#switch_course_button {
+    height: 5rem;
+}
+.footer {
+    margin-left: calc(17vw - 2rem);
+    height: 5.2rem;
+}
+.table.table-hover {
+    font-size: 1.5rem;
+}
+#switch_course_button {
+    margin-right: calc(-19vw + 0rem);
+}
+}
+@media (max-width: 1900px){
+.footer .add-assignment {
+    font-size: 1.5rem;
+}
+}
+
+@media (max-width: 1863px){
+#course-list {
+    height: 4vh;
+        width: calc(10vw - 2rem);
     }
-
-    @media (max-width: 2304px) {
-        .footer {
-            margin-left: calc(14vw - 2rem);
-        }
+    .select-div::after {
+   top: calc(4.5vh - 2rem);
+        right: calc(3.5vw - 2rem);
+}
+ 
     }
+@media (max-width: 1810px){
+.page-header {
+    padding-left: calc(4.6vw - 2rem);
+}
+.footer {
+    margin-left: calc(18vw - 2rem);
+}
+}
+@media (max-width: 1700px){
+div.dataTables_wrapper div.dataTables_filter input {
+    width: 19vw !important;
+    height: 3.3rem;
+}
+#switch_course_button {
+    font-size: 1.5rem;
+}
+.footer .add-assignment {
+    font-size: 1.3rem;
+}
+}
+@media (max-width: 1682px){
+#course-list {
+    height: 4vh;
+    width: calc(11vw - 2rem);
+}
+#courseLabel {
+    font-size: 2.2rem;
+}
+}
+@media (max-width: 1600px){
+.table.table-hover {
+    font-size: 1.3rem;
+}
+.panel-title {
+    font-size: 16px;
+}
+.footer {
+    width: calc(13.5vw - 2rem);
+    height: 4.5rem;
+}
+}
 
-    @media (max-width: 2300px) {
-        #switch_course_button {
-            margin-right: calc(-18vw + 0rem);
-        }
+@media (max-width: 1583px){
+#courseLabel {
+    font-size: 2rem;
+}}
+@media (max-width: 1528px){
+.courseModalContent {
+    width: 35%;
+    height: 30%;
+}
+#course-list {
+    width: calc(12vw - 2rem);
+}
+.select-div::after {
+    right: calc(5vw - 2rem);
+}
+}
+@media (max-width: 1500px){
+.footer .add-assignment {
+    font-size: 1.1rem;
+}
+}
+@media (max-width: 1442px){
+#course-list {
+    font-size: 1.4rem;
+}
+#cancel_course_button,#change_course_button {
+    width: calc(10vw - 2rem);
+}
+}
+@media (max-width: 1432px){
+#switch_course_button {
+    font-size: 1.3rem;
+}
+}
+@media (max-width: 1410px){
+.table.table-hover {
+    font-size: 1.2rem;
+}
+div.dataTables_wrapper div.dataTables_filter input {
+    width: 17vw !important;
+}
 
-        .page-header {
-            padding-left: calc(1.4vw - 2rem);
-        }
-    }
-
-    @media (max-width: 2220px) {
-        .footer {
-            width: calc(12vw - 2rem);
-        }
-    }
-
-    @media (max-width: 2374px) {
-        .select-div::after {
-            top: calc(4vh - 2rem);
-        }
-    }
-
-    @media (max-width: 2100px) {
-        .page-header {
-            padding-left: calc(2.4vw - 2rem);
-        }
-    }
-
-    @media (max-width: 2000px) {
-        .footer {
-            width: calc(13vw - 2rem);
-            margin-left: calc(15vw - 2rem);
-
-        }
-
-        .select-div::after {
-            top: calc(4.2vh - 2rem);
-        }
-    }
-
-    @media (max-width: 1978px) {
-        .courseModalContent {
-            width: 30%;
-            height: 30%;
-        }
-    }
-
-    @media (max-width: 1949px) {
-        .page-header {
-            padding-left: calc(3.4vw - 2rem);
-        }
-
-        #switch_course_button {
-            height: 5rem;
-        }
-
-        .footer {
-            margin-left: calc(17vw - 2rem);
-            height: 5.2rem;
-        }
-
-        .table.table-hover {
-            font-size: 1.5rem;
-        }
-
-        #switch_course_button {
-            margin-right: calc(-19vw + 0rem);
-        }
-    }
-
-    @media (max-width: 1900px) {
-        .footer .add-assignment {
-            font-size: 1.5rem;
-        }
-    }
-
-    @media (max-width: 1863px) {
-        #course-list {
-            height: 4vh;
-            width: calc(10vw - 2rem);
-        }
-
-        .select-div::after {
-            top: calc(4.5vh - 2rem);
-            right: calc(3.5vw - 2rem);
-        }
-
-    }
-
-    @media (max-width: 1810px) {
-        .page-header {
-            padding-left: calc(4.6vw - 2rem);
-        }
-
-        .footer {
-            margin-left: calc(18vw - 2rem);
-        }
-    }
-
-    @media (max-width: 1700px) {
-        div.dataTables_wrapper div.dataTables_filter input {
-            width: 19vw !important;
-            height: 3.3rem;
-        }
-
-        #switch_course_button {
-            font-size: 1.5rem;
-        }
-
-        .footer .add-assignment {
-            font-size: 1.3rem;
-        }
-    }
-
-    @media (max-width: 1682px) {
-        #course-list {
-            height: 4vh;
-            width: calc(11vw - 2rem);
-        }
-
-        #courseLabel {
-            font-size: 2.2rem;
-        }
-    }
-
-    @media (max-width: 1600px) {
-        .table.table-hover {
-            font-size: 1.3rem;
-        }
-
-        .panel-title {
-            font-size: 16px;
-        }
-
-        .footer {
-            width: calc(13.5vw - 2rem);
-            height: 4.5rem;
-        }
-    }
-
-    @media (max-width: 1583px) {
-        #courseLabel {
-            font-size: 2rem;
-        }
-    }
-
-    @media (max-width: 1528px) {
-        .courseModalContent {
-            width: 35%;
-            height: 30%;
-        }
-
-        #course-list {
-            width: calc(12vw - 2rem);
-        }
-
-        .select-div::after {
-            right: calc(4.5vw - 2rem);
-        }
-    }
-
-    @media (max-width: 1500px) {
-        .footer .add-assignment {
-            font-size: 1.1rem;
-        }
-    }
-
-    @media (max-width: 1442px) {
-        #course-list {
-            font-size: 1.8rem;
-        }
-
-        #cancel_course_button,
-        #change_course_button {
-            width: calc(10vw - 2rem);
-        }
-    }
-
-    @media (max-width: 1432px) {
-        #switch_course_button {
-            font-size: 1.3rem;
-        }
-    }
-
-    @media (max-width: 1410px) {
-        .table.table-hover {
-            font-size: 1.2rem;
-        }
-
-        div.dataTables_wrapper div.dataTables_filter input {
-            width: 17vw !important;
-        }
-
-    }
-
-    @media (max-width: 1309px) {
-        .table.table-hover {
-            font-size: 1.1rem;
-        }
-
-        .footer .add-assignment {
-            font-size: 1rem;
-        }
-    }
-
-    @media (max-width: 1262px) {
-        #courseLabel {
-            font-size: 1.8rem;
-        }
-
-        #cancel_course_button,
-        #change_course_button {
-            font-size: 1.8rem;
-        }
-
-        .courseClose {
-            font-size: 2rem;
-        }
-
-        .courseModalContent {
-            height: 27%;
-        }
-
-        #switch_course_button {
-            width: calc(12vw - 2rem);
-        }
-    }
-
-    @media (max-width: 1255px) {
-        #course-list {
-            width: calc(13vw - 2rem);
-        }
-    }
-
-    @media (max-width: 1248px) {
-        .table.table-hover {
-            font-size: 1rem;
-        }
-
-        .footer {
-            width: calc(14.5vw - 2rem);
-        }
-
-        #switch_course_button {
-            width: calc(12vw - 2rem);
-            height: 4rem;
-        }
-    }
-
-    @media (max-width: 1218px) {
-        .courseModalContent {
-            height: 30%;
-        }
-
-        .courseModalContent {
-            width: 40%;
-        }
-    }
-
-    @media (max-width: 1186px) {
-        .table.table-hover {
-            font-size: 0.9rem;
-        }
-    }
-
-    @media (max-width: 1124px) {
-        .footer {
-            width: calc(16.5vw - 2rem);
-        }
-    }
+}
+@media (max-width: 1309px){
+.table.table-hover {
+    font-size: 1.1rem;
+}
+.footer .add-assignment {
+    font-size: 1rem;
+}
+}
+@media (max-width: 1262px){
+#courseLabel {
+    font-size: 1.8rem;
+}
+#cancel_course_button,#change_course_button {
+    font-size: 1.8rem;
+    height: calc(8vh - 2rem);
+}
+.courseClose {
+    font-size: 2rem;
+}
+.courseModalContent {
+    height: 27%;
+}
+#switch_course_button {
+    width: calc(12vw - 2rem);
+}
+}
+@media (max-width: 1255px){
+#course-list {
+    width: calc(11vw - 2rem);
+}
+}
+@media (max-width: 1248px){
+.table.table-hover {
+    font-size: 1rem;
+}
+.footer {
+    width: calc(14.5vw - 2rem);
+}
+#switch_course_button {
+    width: calc(12vw - 2rem);
+        height: 4rem;
+}
+}
+@media (max-width: 1218px){
+.courseModalContent {
+    height: 40%;
+    width: 40%;
+}
+}
+@media (max-width: 1186px){
+.table.table-hover {
+    font-size: 0.9rem;
+}}
+@media (max-width: 1124px){
+.footer {
+    width: calc(16.5vw - 2rem);
+}
+}
 </style>
 {%- endblock -%}
 {%- block title -%}
