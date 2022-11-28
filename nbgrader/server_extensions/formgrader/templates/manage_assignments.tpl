@@ -23,7 +23,7 @@
     div.dataTables_wrapper div.dataTables_filter input {
         width: 20vw !important;
         border-radius: 2rem;
-        height: 4rem;
+        height: 3.8rem;
     }
 
     .panel-default>.panel-heading {
@@ -49,7 +49,7 @@
         padding: 1.5rem;
     }
 
-     .footer .add-assignment {
+    .footer .add-assignment {
         border-radius: 2rem;
         color: #FFFFFF;
         font-weight: 600;
@@ -132,14 +132,14 @@
         justify-content: space-between;
     }
 
-      #switch_course_button {
+    #switch_course_button {
         width: calc(10vw - 2rem);
-        height: 6rem;
+        height: 4rem;
         border-radius: 3rem;
         border: none;
         margin-right: calc(-19vw + 0rem);
         background-color: #D2EDFB;
-        font-size: 2.5rem;
+        font-size: 2rem;
         font-weight: 100;
     }
 
@@ -166,7 +166,7 @@
         background-color: rgba(0, 0, 0, 0.4);
     }
 
-   .courseModalContent {
+    .courseModalContent {
         background-color: #fefefe;
         margin: calc(35vh - 2rem) auto;
         padding: 3rem;
@@ -202,11 +202,12 @@
         display: flex;
         align-self: center;
     }
-    .button-row{
+
+    .button-row {
         margin-left: calc(2vw - 21rem);
     }
 
-     #courseLabel {
+    #courseLabel {
         font-family: 'Gothic A1';
         font-style: normal;
         font-size: 2rem;
@@ -216,7 +217,7 @@
         margin: 3rem;
     }
 
-      #cancel_course_button {
+    #cancel_course_button {
         background: white;
         border-radius: 2rem;
         border-color: #5FBEF0;
@@ -248,7 +249,7 @@
         right: calc(4vw - 2rem);
     }
 
-     #course-list {
+    #course-list {
         appearance: none;
         margin: 3rem 3rem 3rem 3rem;
         width: calc(9vw - 2rem);
@@ -270,13 +271,378 @@
         text-align: center;
     }
 
-   #instructions-panel-default {
+    #instructions-panel-default {
         width: 70%;
         border-radius: 2rem;
         float: right;
         border-color: #5FBEF0;
         background-color: #FFFFFF;
         font-family: Poppins;
+    }
+
+    #warning-windows,
+    #warning-exchange,
+    #warning-course-id {
+        display: none;
+    }
+
+    @media (max-width: 2560px) {
+        #switch_course_button {
+            width: calc(10vw - 2rem);
+            height: 6rem;
+            margin-right: calc(-16vw + 0rem);
+        }
+
+        .footer {
+            margin-left: calc(13vw - 2rem);
+            height: 5.6rem;
+            width: calc(10.5vw - 2rem);
+        }
+
+        .footer .add-assignment {
+            font-size: 1.7rem;
+        }
+
+        .panel-title {
+            font-size: 20px;
+        }
+
+        .panel-body {
+            font-size: 18px;
+        }
+
+        .table.table-hover {
+            font-size: 2rem;
+        }
+
+        .page-header {
+            padding-left: calc(1vw - 2rem);
+        }
+
+        #courseLabel {
+            font-size: 2.5rem;
+        }
+
+        #course-list {
+            font-size: 2.2rem;
+        }
+
+        .courseClose {
+            font-size: 4rem;
+        }
+
+        .select-div::after {
+            top: calc(3.5vh - 2rem);
+            right: calc(3vw - 2rem);
+        }
+
+        .courseModalContent {
+            width: 25%;
+            height: 25%;
+        }
+
+        #change_course_button {
+            border-radius: 3rem;
+        }
+
+        #cancel_course_button {
+            border-radius: 3rem;
+        }
+    }
+
+    @media (max-width: 2560px) {
+        .footer {
+            width: calc(10.8vw - 2rem);
+        }
+    }
+
+    @media (max-width: 2374px) {
+        .select-div::after {
+            top: calc(3.8vh - 2rem);
+        }
+    }
+
+    @media (max-width: 2330px) {
+        .footer {
+            width: calc(11.2vw - 2rem);
+        }
+    }
+
+    @media (max-width: 2304px) {
+        .footer {
+            margin-left: calc(14vw - 2rem);
+        }
+    }
+
+    @media (max-width: 2300px) {
+        #switch_course_button {
+            margin-right: calc(-18vw + 0rem);
+        }
+
+        .page-header {
+            padding-left: calc(1.4vw - 2rem);
+        }
+    }
+
+    @media (max-width: 2220px) {
+        .footer {
+            width: calc(12vw - 2rem);
+        }
+    }
+
+    @media (max-width: 2374px) {
+        .select-div::after {
+            top: calc(4vh - 2rem);
+        }
+    }
+
+    @media (max-width: 2100px) {
+        .page-header {
+            padding-left: calc(2.4vw - 2rem);
+        }
+    }
+
+    @media (max-width: 2000px) {
+        .footer {
+            width: calc(13vw - 2rem);
+            margin-left: calc(15vw - 2rem);
+
+        }
+
+        .select-div::after {
+            top: calc(4.2vh - 2rem);
+        }
+    }
+
+    @media (max-width: 1978px) {
+        .courseModalContent {
+            width: 30%;
+            height: 30%;
+        }
+    }
+
+    @media (max-width: 1949px) {
+        .page-header {
+            padding-left: calc(3.4vw - 2rem);
+        }
+
+        #switch_course_button {
+            height: 5rem;
+        }
+
+        .footer {
+            margin-left: calc(17vw - 2rem);
+            height: 5.2rem;
+        }
+
+        .table.table-hover {
+            font-size: 1.5rem;
+        }
+
+        #switch_course_button {
+            margin-right: calc(-19vw + 0rem);
+        }
+    }
+
+    @media (max-width: 1900px) {
+        .footer .add-assignment {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (max-width: 1863px) {
+        #course-list {
+            height: 4vh;
+            width: calc(10vw - 2rem);
+        }
+
+        .select-div::after {
+            top: calc(4.5vh - 2rem);
+            right: calc(3.5vw - 2rem);
+        }
+
+    }
+
+    @media (max-width: 1810px) {
+        .page-header {
+            padding-left: calc(4.6vw - 2rem);
+        }
+
+        .footer {
+            margin-left: calc(18vw - 2rem);
+        }
+    }
+
+    @media (max-width: 1700px) {
+        div.dataTables_wrapper div.dataTables_filter input {
+            width: 19vw !important;
+            height: 3.3rem;
+        }
+
+        #switch_course_button {
+            font-size: 1.5rem;
+        }
+
+        .footer .add-assignment {
+            font-size: 1.3rem;
+        }
+    }
+
+    @media (max-width: 1682px) {
+        #course-list {
+            height: 4vh;
+            width: calc(11vw - 2rem);
+        }
+
+        #courseLabel {
+            font-size: 2.2rem;
+        }
+    }
+
+    @media (max-width: 1600px) {
+        .table.table-hover {
+            font-size: 1.3rem;
+        }
+
+        .panel-title {
+            font-size: 16px;
+        }
+
+        .footer {
+            width: calc(13.5vw - 2rem);
+            height: 4.5rem;
+        }
+    }
+
+    @media (max-width: 1583px) {
+        #courseLabel {
+            font-size: 2rem;
+        }
+    }
+
+    @media (max-width: 1528px) {
+        .courseModalContent {
+            width: 35%;
+            height: 30%;
+        }
+
+        #course-list {
+            width: calc(12vw - 2rem);
+        }
+
+        .select-div::after {
+            right: calc(4.5vw - 2rem);
+        }
+    }
+
+    @media (max-width: 1500px) {
+        .footer .add-assignment {
+            font-size: 1.1rem;
+        }
+    }
+
+    @media (max-width: 1442px) {
+        #course-list {
+            font-size: 1.8rem;
+        }
+
+        #cancel_course_button,
+        #change_course_button {
+            width: calc(10vw - 2rem);
+        }
+    }
+
+    @media (max-width: 1432px) {
+        #switch_course_button {
+            font-size: 1.3rem;
+        }
+    }
+
+    @media (max-width: 1410px) {
+        .table.table-hover {
+            font-size: 1.2rem;
+        }
+
+        div.dataTables_wrapper div.dataTables_filter input {
+            width: 17vw !important;
+        }
+
+    }
+
+    @media (max-width: 1309px) {
+        .table.table-hover {
+            font-size: 1.1rem;
+        }
+
+        .footer .add-assignment {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 1262px) {
+        #courseLabel {
+            font-size: 1.8rem;
+        }
+
+        #cancel_course_button,
+        #change_course_button {
+            font-size: 1.8rem;
+        }
+
+        .courseClose {
+            font-size: 2rem;
+        }
+
+        .courseModalContent {
+            height: 27%;
+        }
+
+        #switch_course_button {
+            width: calc(12vw - 2rem);
+        }
+    }
+
+    @media (max-width: 1255px) {
+        #course-list {
+            width: calc(13vw - 2rem);
+        }
+    }
+
+    @media (max-width: 1248px) {
+        .table.table-hover {
+            font-size: 1rem;
+        }
+
+        .footer {
+            width: calc(14.5vw - 2rem);
+        }
+
+        #switch_course_button {
+            width: calc(12vw - 2rem);
+            height: 4rem;
+        }
+    }
+
+    @media (max-width: 1218px) {
+        .courseModalContent {
+            height: 30%;
+        }
+
+        .courseModalContent {
+            width: 40%;
+        }
+    }
+
+    @media (max-width: 1186px) {
+        .table.table-hover {
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (max-width: 1124px) {
+        .footer {
+            width: calc(16.5vw - 2rem);
+        }
     }
 </style>
 {%- endblock -%}
@@ -289,7 +655,7 @@ Manage Assignments
         <div class="column-flex">
             <div class="row-flex select-div">
                 <div>
-                    <label id="courseLabel" for="course">Select course</label>
+                    <label id="courseLabel" for="course">Course name</label>
                 </div>
                 <div>
                     <select class="select" id="course-list" name="course">
