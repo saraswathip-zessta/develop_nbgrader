@@ -142,6 +142,81 @@
             font-family: 'Poppins' sans-serif !important;
             font-weight: 900;
         }
+        @media (max-width: 2560px) {
+ 		.col-md-2.sidenav {
+			width: 11%;
+		}
+		.career-logo {
+		    width: calc(11vw - 2rem);
+		    height: 7rem;
+		}
+		
+	}
+	@media (max-width: 2304px){
+.col-md-2.sidenav {
+    width: 12%;
+}
+}
+
+@media (max-width: 2112px){
+.col-md-2.sidenav {
+    width: 13%;
+}
+}
+
+@media (max-width: 1949px){
+.col-md-2.sidenav {
+    width: 14%;
+}
+.career-logo {
+    width: calc(10vw - 2rem);
+    height: 5rem;
+}
+}
+@media (max-width: 1810px){
+.col-md-2.sidenav {
+    width: 15%;
+}
+}
+@media (max-width: 1700px){
+.career-logo {
+    height: 4rem;
+}
+}
+@media (max-width: 1689px){
+.nav-stacked>li:nth-of-type(1)>a,.nav-stacked>li:nth-last-of-type(1)>a  {
+    font-size: 1.8rem;
+    }}
+    @media (max-width: 1560px){
+.nav-stacked>li:nth-of-type(1)>a, .nav-stacked>li:nth-last-of-type(1)>a {
+    font-size: 1.6rem;
+}}
+@media (max-width: 1432px){
+.nav-stacked>li:nth-of-type(1)>a, .nav-stacked>li:nth-last-of-type(1)>a {
+    font-size: 1.4rem;
+}}
+@media (max-width: 1303px){
+.nav-stacked>li:nth-of-type(1)>a, .nav-stacked>li:nth-last-of-type(1)>a {
+    font-size: 1.2rem;
+}
+}
+@media (max-width: 1186px){
+.col-md-2.sidenav {
+    width: 13%;
+}
+.nav-stacked>li:nth-of-type(1)>a, .nav-stacked>li:nth-last-of-type(1)>a {
+    font-size: 0.97rem;
+}
+.career-logo {
+    height: 3rem;
+}
+
+
+}
+@media (max-width: 1183px){
+.col-md-2.sidenav {
+    width: 14%;
+}}
     </style>
     {%- block head -%}
     {%- endblock -%}
