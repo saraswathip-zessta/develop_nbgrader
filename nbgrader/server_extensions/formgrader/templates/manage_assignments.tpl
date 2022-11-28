@@ -282,9 +282,11 @@
     @media (max-width: 2560px) {
         #switch_course_button {
             width: calc(10vw - 2rem);
-            height: 6rem;
             margin-right: calc(-16vw + 0rem);
         }
+	#change_course_button,#switch_course_button {
+		height: calc(8vh - 2rem);
+	}
 
         .footer {
             margin-left: calc(13vw - 2rem);
@@ -487,9 +489,11 @@ div.dataTables_wrapper div.dataTables_filter input {
 }
 #course-list {
     width: calc(12vw - 2rem);
+    height: 5vh;
 }
 .select-div::after {
     right: calc(5vw - 2rem);
+    top: calc(6vh - 2rem);
 }
 }
 @media (max-width: 1500px){
