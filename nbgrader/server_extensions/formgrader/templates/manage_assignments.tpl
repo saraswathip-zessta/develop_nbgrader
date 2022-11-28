@@ -284,7 +284,7 @@
             width: calc(10vw - 2rem);
             margin-right: calc(-16vw + 0rem);
         }
-	#change_course_button,#switch_course_button {
+	#change_course_button,#cancel_course_button {
 		height: calc(8vh - 2rem);
 	}
 
