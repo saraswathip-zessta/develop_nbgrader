@@ -654,7 +654,7 @@ Manage Students</a></li>
                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
                     aria-expanded="false" aria-controls="collapseOne">
                     <img
-                        src='https://ik.imagekit.io/iwwbj9so6/Vector_9_c4obhy8x5.png?ik-sdk-version=javascript-1.4.3&updatedAt=1660643960909' />
+                        src="https://datalab-static-images.s3.ap-south-1.amazonaws.com/expand.png" />
                 </a>
             </h4>
         </div>
