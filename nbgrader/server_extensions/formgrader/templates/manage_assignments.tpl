@@ -739,8 +739,7 @@ Manage Students</a></li>
 {%endblock%}
 {% block script%}
 <script>
-var os = require('os');
-console.log(os.environ.get('JUPYTERHUB_API_URL'));
+console.log('{{ base_url }}');
 const hub_url='http://ae5c2d5f72efc4bd3bd1885bd0732da8-1254899133.ap-south-1.elb.amazonaws.com/';
     const switchCourseButton = document.getElementById("switch_course_button");
     const courseModal = document.getElementById("changeCourseModal");
