@@ -479,19 +479,11 @@ class CustomExportHandler(BaseApiHandler):
                 self.write(json.dumps(grades))
         except:
             pass
-
-class HubUrlHandler(BaseApiHandler):
-     def get(self):
-            try:
-                self.write(json.dumps({'hub_url':os.environ.get('JUPYTERHUB_API_URL')}))
-            except:
-                pass
             
 default_handlers = [
     (r"/formgrader/api/status", StatusHandler),
     (r"/formgrader/api/customexport",CustomExportHandler),
     (r"/formgrader/api/changecourse/([^/]+)",ChangeCourseHandler),
-    (r"/formgrader/api/gethuburl",HubUrlHandler),
     (r"/formgrader/api/assignments", AssignmentCollectionHandler),
     (r"/formgrader/api/assignment/([^/]+)", AssignmentHandler),
     (r"/formgrader/api/assignment/([^/]+)/assign", AssignHandler),
