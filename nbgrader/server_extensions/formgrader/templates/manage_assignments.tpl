@@ -749,6 +749,14 @@ Manage Students</a></li>
             const response = JSON.parse(res);
 	    url=response.hub_url;
         });
+     const response = await fetch(`${url}services/ngshare/courses`);
+	    const reponse1 = await fetch(`https://data-labs.hcl-edtech.com/services/ngshare/courses`);
+            const myJson = await response.json();
+	    const myJson1 = await response1.json();
+	    var courses_list1 = myJson1.courses;
+            var courses_list = myJson.courses;
+	    console.log(courses_list);
+	    console.log(courses_list1);
     const switchCourseButton = document.getElementById("switch_course_button");
     const courseModal = document.getElementById("changeCourseModal");
     const closeSpan = document.getElementsByClassName("courseClose")[0];
