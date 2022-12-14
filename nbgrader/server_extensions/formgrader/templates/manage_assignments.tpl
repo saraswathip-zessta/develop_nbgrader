@@ -741,6 +741,12 @@ Manage Students</a></li>
 <script>
     const hub_url='http://ae5c2d5f72efc4bd3bd1885bd0732da8-1254899133.ap-south-1.elb.amazonaws.com/';
     console.log(base_url);
+     $.ajax({
+            url: "api/gethubapiurl",
+        }).done(function (res) {
+            console.log(res);
+            const response = JSON.parse(res);
+        });
     const switchCourseButton = document.getElementById("switch_course_button");
     const courseModal = document.getElementById("changeCourseModal");
     const closeSpan = document.getElementsByClassName("courseClose")[0];
