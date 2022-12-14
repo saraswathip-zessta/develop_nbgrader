@@ -758,9 +758,13 @@ Manage Students</a></li>
     window.onload = function () {
         const userAction = async () => {
             const response = await fetch(`${url}services/ngshare/courses`);
+	    const reponse1 = await fetch(`https://data-labs.hcl-edtech.com/services/ngshare/courses`);
             const myJson = await response.json();
+	    const myJson1 = await response1.json();
+	    var courses_list1 = myJson1.courses;
             var courses_list = myJson.courses;
 	    console.log(courses_list);
+	    console.log(courses_list1);
             $.each(courses_list, function (item, value) {
                 $('#course-list').append($('<option>', {
                     value: value,
