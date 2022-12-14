@@ -741,11 +741,13 @@ Manage Students</a></li>
 <script>
     const hub_url='http://ae5c2d5f72efc4bd3bd1885bd0732da8-1254899133.ap-south-1.elb.amazonaws.com/';
     console.log(base_url);
+    let url;
      $.ajax({
-            url: "api/gethubapiurl",
+            url: "formgrader/api/gethubapiurl",
         }).done(function (res) {
             console.log(res);
             const response = JSON.parse(res);
+	    url=response.hub_url;
         });
     const switchCourseButton = document.getElementById("switch_course_button");
     const courseModal = document.getElementById("changeCourseModal");
@@ -755,7 +757,7 @@ Manage Students</a></li>
     const selected_course = document.getElementById("course-list");
     window.onload = function () {
         const userAction = async () => {
-            const response = await fetch(`${hub_url}services/ngshare/courses`);
+            const response = await fetch(`${url}services/ngshare/courses`);
             const myJson = await response.json();
             var courses_list = myJson.courses;
             $.each(courses_list, function (item, value) {
