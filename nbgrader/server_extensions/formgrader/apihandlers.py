@@ -12,7 +12,6 @@ import boto3
 import datetime
 from io import StringIO  
 import requests
-from ...auth.jupyterhub import get_jupyterhub_api_url
 
 class StatusHandler(BaseApiHandler):
     @web.authenticated
@@ -481,18 +480,10 @@ class CustomExportHandler(BaseApiHandler):
         except:
             pass
 
-class HubApiUrlHandler(BaseApiHandler):
-    def get(self):
-        try:
-            self.write(json.dumps({'hub_url':get_jupyterhub_api_url()}))
-        except:
-            pass
-            
 default_handlers = [
     (r"/formgrader/api/status", StatusHandler),
     (r"/formgrader/api/customexport",CustomExportHandler),
     (r"/formgrader/api/changecourse/([^/]+)",ChangeCourseHandler),
-    (r"/formgrader/api/gethubapiurl",HubApiUrlHandler),
     (r"/formgrader/api/assignments", AssignmentCollectionHandler),
     (r"/formgrader/api/assignment/([^/]+)", AssignmentHandler),
     (r"/formgrader/api/assignment/([^/]+)/assign", AssignHandler),
