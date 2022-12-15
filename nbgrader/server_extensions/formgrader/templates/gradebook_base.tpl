@@ -18,10 +18,6 @@
         padding: 0.5vw 1vw 0.5vw 1vw;
     }
 
-    table {
-        border-radius: 10px;
-    }
-
     @media (max-width: 1440px) {
         #exportButton {
             width: 10vw;
