@@ -739,10 +739,9 @@ Manage Students</a></li>
 {%endblock%}
 {% block script%}
 <script>
-    const hub_url='http://ae5c2d5f72efc4bd3bd1885bd0732da8-1254899133.ap-south-1.elb.amazonaws.com/';
     const url = window.location.href.split('.com');
+    const hub_url = url[0]+'.com/';
     const ngshare_url=url[0]+'.com/services/ngshare/';
-    console.log(ngshare_url);
     const switchCourseButton = document.getElementById("switch_course_button");
     const courseModal = document.getElementById("changeCourseModal");
     const closeSpan = document.getElementsByClassName("courseClose")[0];
@@ -750,10 +749,10 @@ Manage Students</a></li>
     const change_course_button = document.getElementById("change_course_button");
     const selected_course = document.getElementById("course-list");
     window.onload = function () {
-        const userAction = async () => {
+        const loadCourses = async () => {
             const response = await fetch(`${ngshare_url}/courses`);
-            const myJson = await response.json();
-            var courses_list = myJson.courses;
+            const response_json = await response.json();
+            var courses_list = response_json.courses;
             $.each(courses_list, function (item, value) {
                 $('#course-list').append($('<option>', {
                     value: value,
@@ -761,7 +760,7 @@ Manage Students</a></li>
                 }));
             })
         }
-        userAction();
+        loadCourses();
     }
     switchCourseButton.onclick = function () {
         courseModal.style.display = "block";
