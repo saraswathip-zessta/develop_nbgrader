@@ -740,7 +740,7 @@ Manage Students</a></li>
 {% block script%}
 <script>
     const hub_url='http://ae5c2d5f72efc4bd3bd1885bd0732da8-1254899133.ap-south-1.elb.amazonaws.com/';
-    console.log(base_url);
+    console.log(window.location.hostname);
     let url;
      $.ajax({
             url: "formgrader/api/gethubapiurl",
@@ -757,14 +757,9 @@ Manage Students</a></li>
     const selected_course = document.getElementById("course-list");
     window.onload = function () {
         const userAction = async () => {
-            const response = await fetch(`${url}services/ngshare/courses`);
-	    const reponse1 = await fetch(`https://data-labs.hcl-edtech.com/services/ngshare/courses`);
+            const response = await fetch(`/services/ngshare/courses`);
             const myJson = await response.json();
-	    const myJson1 = await response1.json();
-	    var courses_list1 = myJson1.courses;
             var courses_list = myJson.courses;
-	    console.log(courses_list);
-	    console.log(courses_list1);
             $.each(courses_list1, function (item, value) {
                 $('#course-list').append($('<option>', {
                     value: value,
