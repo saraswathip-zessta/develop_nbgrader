@@ -741,6 +741,7 @@ Manage Students</a></li>
 <script>
     const hub_url='http://ae5c2d5f72efc4bd3bd1885bd0732da8-1254899133.ap-south-1.elb.amazonaws.com/';
     const url=window.location.hostname;
+    console.log(window.location.href);
     const ngshare_url=url+'/services/ngshare/courses';
     console.log(ngshare_url);
     const switchCourseButton = document.getElementById("switch_course_button");
