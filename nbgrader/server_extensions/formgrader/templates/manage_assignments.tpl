@@ -751,7 +751,7 @@ Manage Students</a></li>
     const selected_course = document.getElementById("course-list");
     window.onload = function () {
         const userAction = async () => {
-            const response = await fetch('${url}/services/ngshare/courses');
+            const response = await fetch(ngshare_url);
             const myJson = await response.json();
             var courses_list = myJson.courses;
             $.each(courses_list1, function (item, value) {
