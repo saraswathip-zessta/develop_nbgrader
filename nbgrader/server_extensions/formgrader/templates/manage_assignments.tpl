@@ -754,7 +754,7 @@ Manage Students</a></li>
             const response = await fetch(`${ngshare_url}/courses`);
             const myJson = await response.json();
             var courses_list = myJson.courses;
-            $.each(courses_list1, function (item, value) {
+            $.each(courses_list, function (item, value) {
                 $('#course-list').append($('<option>', {
                     value: value,
                     text: value
